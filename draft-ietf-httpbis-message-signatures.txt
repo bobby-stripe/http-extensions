@@ -1500,12 +1500,12 @@ Table of Contents
            such as through an algorithm field on the key value itself,
            the verifier will use this algorithm.
 
-       4.  If the algorithm is specified in more that one location, such
+       4.  If the algorithm is specified in more than one location, such
            as through static configuration and the algorithm signature
            parameter, or the algorithm signature parameter and from the
            key material itself, the resolved algorithms MUST be the
            same.  If the algorithms are not the same, the verifier MUST
-           vail the verification.
+           fail the verification.
 
    7.  Use the received HTTP message and the signature's metadata to
        recreate the signature base, using the algorithm defined in
@@ -1863,7 +1863,7 @@ Table of Contents
    The signer MAY include the Signature field as a trailer to facilitate
    signing a message after its content has been processed by the signer.
    However, since intermediaries are allowed to drop trailers as per
-   [SEMANTICS], it is RECOMMENDED that the Signature-Input HTTP field be
+   [SEMANTICS], it is RECOMMENDED that the Signature HTTP field be
    included only as a header to avoid signatures being inadvertently
    stripped from a message.
 
@@ -2265,7 +2265,7 @@ Table of Contents
    identified by a unique string, known as the component identifier.
    Component identifiers for derived components always start with the
    "@" (at) symbol to distinguish them from HTTP header fields.  IANA is
-   asked to create and maintain a new registry typed "HTTP Signature
+   asked to create and maintain a new registry titled "HTTP Signature
    Derived Component Identifiers" to record and maintain the set of non-
    field component identifiers and the methods to produce their
    associated component values.  Initial values for this registry are
