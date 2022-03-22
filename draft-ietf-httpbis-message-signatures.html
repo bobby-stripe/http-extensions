@@ -1748,7 +1748,7 @@ of the structured field value. <a href="#http-header-structured" class="xref">Se
           <h4 id="name-canonicalized-structured-ht">
 <a href="#section-2.1.1" class="section-number selfRef">2.1.1. </a><a href="#name-canonicalized-structured-ht" class="section-name selfRef">Canonicalized Structured HTTP Fields</a>
           </h4>
-<p id="section-2.1.1-1">If value of the the HTTP field in question is a structured field (<span>[<a href="#RFC8941" class="xref">RFC8941</a>]</span>), the component identifier <span class="bcp14">MAY</span> include the <code>sf</code> parameter to indicate it is a known structured field. If this
+<p id="section-2.1.1-1">If the value of the the HTTP field in question is a structured field (<span>[<a href="#RFC8941" class="xref">RFC8941</a>]</span>), the component identifier <span class="bcp14">MAY</span> include the <code>sf</code> parameter to indicate it is a known structured field. If this
 parameter is included with a component identifier, the HTTP field value <span class="bcp14">MUST</span> be serialized using the rules specified in <span><a href="https://rfc-editor.org/rfc/rfc8941#section-4" class="relref">Section 4</a> of [<a href="#RFC8941" class="xref">RFC8941</a>]</span> applicable to the type of the HTTP field. Note that this process
 will replace any optional internal whitespace with a single space character, among other potential transformations of the value.<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
 <p id="section-2.1.1-2">For example, the following dictionary field is a valid serialization:<a href="#section-2.1.1-2" class="pilcrow">¶</a></p>
@@ -1954,7 +1954,7 @@ NOTE: '\' line wrapping per RFC 8792
           <h4 id="name-method">
 <a href="#section-2.2.2" class="section-number selfRef">2.2.2. </a><a href="#name-method" class="section-name selfRef">Method</a>
           </h4>
-<p id="section-2.2.2-1">The <code>@method</code> component identifier refers to the HTTP method of a request message. The component value of is canonicalized by taking the value of the method as a string. Note that the method name is case-sensitive as per <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-9.1" class="relref">Section 9.1</a></span>, and conventionally standardized method names are uppercase US-ASCII.
+<p id="section-2.2.2-1">The <code>@method</code> component identifier refers to the HTTP method of a request message. The component value is canonicalized by taking the value of the method as a string. Note that the method name is case-sensitive as per <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-9.1" class="relref">Section 9.1</a></span>, and conventionally standardized method names are uppercase US-ASCII.
 If used, the <code>@method</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.2-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.2-2">For example, the following request message:<a href="#section-2.2.2-2" class="pilcrow">¶</a></p>
 <div id="section-2.2.2-3">
@@ -2017,7 +2017,7 @@ Host: www.example.com
 </pre><a href="#section-2.2.4-5" class="pilcrow">¶</a>
 </div>
 <p id="section-2.2.4-6">If used in a related-response, the <code>@authority</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.4-6" class="pilcrow">¶</a></p>
-<p id="section-2.2.4-7">The <code>@authority</code> derived component <span class="bcp14">SHOULD</span> be used instead signing the <code>Host</code> header directly, see <a href="#security-not-fields" class="xref">Section 7.20</a>.<a href="#section-2.2.4-7" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-7">The <code>@authority</code> derived component <span class="bcp14">SHOULD</span> be used instead of signing the <code>Host</code> header directly, see <a href="#security-not-fields" class="xref">Section 7.20</a>.<a href="#section-2.2.4-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-scheme">
@@ -2198,7 +2198,7 @@ POST /path?param=value&amp;foo=bar&amp;baz=batman&amp;qux= HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.9-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.9-6">Indicating the <code>baz</code>, <code>qux</code> and <code>param</code> named query parameters in would result in the following <code>@query-param</code> value:<a href="#section-2.2.9-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-6">Indicating the <code>baz</code>, <code>qux</code> and <code>param</code> named query parameters would result in the following <code>@query-param</code> value:<a href="#section-2.2.9-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.9-7">
 <pre>
 "@query-param";name="baz": batman
@@ -2819,7 +2819,7 @@ Signature: sig1=:P0wLUszWQjoi54udOtydf9IWTfNhy+r53jGFj9XZuP4uKwxyJo\
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-multiple-signatures" class="section-name selfRef">Multiple Signatures</a>
         </h3>
 <p id="section-4.3-1">Multiple distinct signatures <span class="bcp14">MAY</span> be included in a single message. Each distinct signature <span class="bcp14">MUST</span> have a unique label. Since <code>Signature-Input</code> and <code>Signature</code> are both defined as Dictionary Structured fields, they can be used to include multiple signatures within the same HTTP message by using distinct signature labels. These multiple signatures could be added all by the same signer or could come from several different signers. For example, a signer may include multiple signatures signing the same message components with different keys or algorithms to support verifiers with different capabilities, or a reverse proxy may include information about the client in fields when forwarding the request to a service host, including a signature over the client's original signature values.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
-<p id="section-4.3-2">The following is a non-normative example starts with a signed request from the client. The proxy takes this request validates the client's signature.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">The following non-normative example starts with a signed request from the client. The proxy takes this request validates the client's signature.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
 <div id="section-4.3-3">
 <pre class="lang-http-message sourcecode">
 NOTE: '\' line wrapping per RFC 8792
@@ -3618,7 +3618,7 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
 <a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-identification-through-keys" class="section-name selfRef">Identification through Keys</a>
         </h3>
 <p id="section-8.1-1">If a signer uses the same key with multiple verifiers, or uses the same key over time with a single verifier, the ongoing use of that key can be used to track the signer throughout the set of verifiers that messages are sent to. Since cryptographic keys are meant to be functionally unique, the use of the same key over time is a strong indicator that it is the same party signing multiple messages.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
-<p id="section-8.1-2">In many applications, this is a desirable trait, and it allows HTTP Message Signatures to be used as part of authenticating the signer to the verifier. However, unintentional tracking that a signer might not be aware of. To counter this kind of tracking, a signer can use a different key for each verifier that it is in communication with. Sometimes, a signer could also rotate their key when sending messages to a given verifier. These approaches do not negate the need for other anti-tracking techniques to be applied as necessary.<a href="#section-8.1-2" class="pilcrow">¶</a></p>
+<p id="section-8.1-2">In many applications, this is a desirable trait, and it allows HTTP Message Signatures to be used as part of authenticating the signer to the verifier. However, it could be unintentional tracking that a signer might not be aware of. To counter this kind of tracking, a signer can use a different key for each verifier that it is in communication with. Sometimes, a signer could also rotate their key when sending messages to a given verifier. These approaches do not negate the need for other anti-tracking techniques to be applied as necessary.<a href="#section-8.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="privacy-confidentiality">
@@ -4056,7 +4056,7 @@ Signature: sig-b22=:Fee1uy9YGZq5UUwwYU6vz4dZNvfw3GYrFl1L6YlVIyUMuWs\
           <h4 id="name-full-coverage-using-rsa-pss">
 <a href="#appendix-B.2.3" class="section-number selfRef">B.2.3. </a><a href="#name-full-coverage-using-rsa-pss" class="section-name selfRef">Full Coverage using rsa-pss-sha512</a>
           </h4>
-<p id="appendix-B.2.3-1">This example covers all applicable in <code>test-request</code> (including the content type and length) plus many derived components, again using the <code>rsa-pss-sha512</code> algorithm. Note that the <code>Host</code> header field is not covered because the <code>@authority</code> derived component is included instead.<a href="#appendix-B.2.3-1" class="pilcrow">¶</a></p>
+<p id="appendix-B.2.3-1">This example covers all applicable message components in <code>test-request</code> (including the content type and length) plus many derived components, again using the <code>rsa-pss-sha512</code> algorithm. Note that the <code>Host</code> header field is not covered because the <code>@authority</code> derived component is included instead.<a href="#appendix-B.2.3-1" class="pilcrow">¶</a></p>
 <p id="appendix-B.2.3-2">The corresponding signature base is:<a href="#appendix-B.2.3-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B.2.3-3">
 <pre>
