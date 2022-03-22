@@ -357,8 +357,8 @@ Table of Contents
 
    Registration requests should use the following template:
 
-   Name:  [a name for the Cache-Status parameter; see Section 3.1.2 of
-      [STRUCTURED-FIELDS] for syntactic requirements]
+   Name:  [a name for the Cache-Status parameter's key; see
+      Section 3.1.2 of [STRUCTURED-FIELDS] for syntactic requirements]
 
    Description:  [a description of the parameter semantics and value]
 
