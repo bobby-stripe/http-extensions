@@ -2161,10 +2161,10 @@ Table of Contents
       base.
 
    Specification document(s):
-      Reference to the document(s) that specify the token endpoint
-      authorization method, preferably including a URI that can be used
-      to retrieve a copy of the document(s).  An indication of the
-      relevant sections may also be included but is not required.
+      Reference to the document(s) that specify the algorithm,
+      preferably including a URI that can be used to retrieve a copy of
+      the document(s).  An indication of the relevant sections may also
+      be included but is not required.
 
 6.1.2.  Initial Contents
 
@@ -2222,10 +2222,10 @@ Table of Contents
       represents.
 
    Specification document(s):
-      Reference to the document(s) that specify the token endpoint
-      authorization method, preferably including a URI that can be used
-      to retrieve a copy of the document(s).  An indication of the
-      relevant sections may also be included but is not required.
+      Reference to the document(s) that specify the parameter,
+      preferably including a URI that can be used to retrieve a copy of
+      the document(s).  An indication of the relevant sections may also
+      be included but is not required.
 
 6.2.2.  Initial Contents
 
@@ -2297,10 +2297,10 @@ Table of Contents
       defined in Section 2.2.
 
    Specification document(s):
-      Reference to the document(s) that specify the token endpoint
-      authorization method, preferably including a URI that can be used
-      to retrieve a copy of the document(s).  An indication of the
-      relevant sections may also be included but is not required.
+      Reference to the document(s) that specify the derived component,
+      preferably including a URI that can be used to retrieve a copy of
+      the document(s).  An indication of the relevant sections may also
+      be included but is not required.
 
 6.3.2.  Initial Contents
 
