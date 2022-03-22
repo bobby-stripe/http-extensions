@@ -2184,7 +2184,7 @@ Host: www.example.com
           </h4>
 <p id="section-2.2.9-1">If a request target URI uses HTML form parameters in the query string as defined in <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>,
 the <code>@query-param</code> component identifier allows addressing of individual query parameters. The query parameters <span class="bcp14">MUST</span> be parsed according to <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5.1</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>, resulting in a list of (<code>nameString</code>, <code>valueString</code>) tuples.
-The <span class="bcp14">REQUIRED</span> <code>name</code> parameter of each input identifier contains the <code>nameString</code> of a single query parameter as an <code>sf-string</code> value.
+The <span class="bcp14">REQUIRED</span> <code>name</code> parameter of each component identifier contains the <code>nameString</code> of a single query parameter as an <code>sf-string</code> value.
 Several different named query parameters <span class="bcp14">MAY</span> be included in the covered components.
 Single named parameters <span class="bcp14">MAY</span> occur in any order in the covered components.<a href="#section-2.2.9-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.9-2">The component value of a single named parameter is the the <code>valueString</code> of the named query parameter defined by <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5.1</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>, which is the value after percent-encoded octets are decoded.
