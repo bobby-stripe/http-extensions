@@ -2413,7 +2413,7 @@ Content-Length: 18
 {"hello": "world"}
 </pre><a href="#section-2.3-8" class="pilcrow">¶</a>
 </div>
-<p id="section-2.3-9">The covered components consist of the <code>@method</code>, <code>@path</code>, and <code>@authority</code> derived component identifiers followed by the <code>Content-Digest</code>, <code>Content-Length</code>, and <code>Content-Type</code> HTTP header fields, in order. The signature parameters consist of a creation timestamp of <code>1618884473</code> and a key identifier of <code>test-key-rsa-pss</code>. Note that no explicit <code>alg</code> parameter is given here since the verifier is assumed by the application to correctly use the RSA PSS algorithm based on the identified key. The signature base for this message with these parameters is:<a href="#section-2.3-9" class="pilcrow">¶</a></p>
+<p id="section-2.3-9">The covered components consist of the <code>@method</code>, <code>@authority</code>, and <code>@path</code> derived component identifiers followed by the <code>Content-Digest</code>, <code>Content-Length</code>, and <code>Content-Type</code> HTTP header fields, in order. The signature parameters consist of a creation timestamp of <code>1618884473</code> and a key identifier of <code>test-key-rsa-pss</code>. Note that no explicit <code>alg</code> parameter is given here since the verifier is assumed by the application to correctly use the RSA PSS algorithm based on the identified key. The signature base for this message with these parameters is:<a href="#section-2.3-9" class="pilcrow">¶</a></p>
 <span id="name-non-normative-example-signa"></span><div id="example-sig-input">
 <figure id="figure-1">
           <div class="alignLeft art-text artwork" id="section-2.3-10.1">
@@ -2602,7 +2602,7 @@ Signature: sig1=:HIbjHC5rS0BYaa9v4QfD4193TORw7u9edguPh0AW3dMq9WImrl\
 {"hello": "world"}
 </pre><a href="#section-3.2-6" class="pilcrow">¶</a>
 </div>
-<p id="section-3.2-7">With the additional requirements that at least the method, path, authority, and cache-control be signed, and that the signature creation timestamp is recent enough at the time of verification, the verification passes.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
+<p id="section-3.2-7">With the additional requirements that at least the method, authority, path, content-digest, content-length, and content-type be signed, and that the signature creation timestamp is recent enough at the time of verification, the verification passes.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
 <div id="verify-requirements">
 <section id="section-3.2.1">
           <h4 id="name-enforcing-application-requi">
@@ -2962,7 +2962,7 @@ NOTE: '\' line wrapping per RFC 8792
 
 Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
   "content-digest" "cache-control");\
-  created=1618884475;keyid="test-key-rsa-pss"
+  keyid="test-key-rsa-pss"
 </pre><a href="#section-5.1-2" class="pilcrow">¶</a>
 </div>
 <p id="section-5.1-3">The requested signature <span class="bcp14">MAY</span> include parameters, such as a desired algorithm or key identifier. These parameters <span class="bcp14">MUST NOT</span> include parameters that the signer is expected to generate, including the <code>created</code> and <code>nonce</code> parameters.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
