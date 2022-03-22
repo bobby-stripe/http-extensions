@@ -5,10 +5,10 @@
 HTTP                                                     A. Backman, Ed.
 Internet-Draft                                                    Amazon
 Intended status: Standards Track                               J. Richer
-Expires: 15 September 2022                           Bespoke Engineering
+Expires: 23 September 2022                           Bespoke Engineering
                                                                M. Sporny
                                                           Digital Bazaar
-                                                           14 March 2022
+                                                           22 March 2022
 
 
                         HTTP Message Signatures
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 September 2022.
+   This Internet-Draft will expire on 23 September 2022.
 
 Copyright Notice
 
@@ -705,7 +705,7 @@ Table of Contents
    @query  The query portion of the target URI for a request.
       (Section 2.2.8)
 
-   @query-params  The parsed query parameters of the target URI for a
+   @query-param  A parsed query parameter of the target URI for a
       request.  (Section 2.2.9)
 
    @status  The status code for a response.  (Section 2.2.10).
@@ -1037,7 +1037,7 @@ Table of Contents
 2.2.9.  Query Parameters
 
    If a request target URI uses HTML form parameters in the query string
-   as defined in HTMLURL, Section 5 [HTMLURL], the @query-params
+   as defined in HTMLURL, Section 5 [HTMLURL], the @query-param
    component identifier allows addressing of individual query
    parameters.  The query parameters MUST be parsed according to
    HTMLURL, Section 5.1 [HTMLURL], resulting in a list of (nameString,
@@ -1067,9 +1067,9 @@ Table of Contents
    Indicating the baz, qux and param named query parameters in would
    result in the following @query-param value:
 
-   "@query-params";name="baz": batman
-   "@query-params";name="qux":
-   "@query-params";name="param": value
+   "@query-param";name="baz": batman
+   "@query-param";name="qux":
+   "@query-param";name="param": value
 
    If a parameter name occurs multiple times in a request, all parameter
    values of that name MUST be included in separate signature base lines
@@ -1080,7 +1080,7 @@ Table of Contents
    RECOMMENDED to sign the entire query string using the @query
    component identifier defined in Section 2.2.8.
 
-   If used in a related-response, the @query-params component identifier
+   If used in a related-response, the @query-param component identifier
    refers to the associated component value of the request that
    triggered the response message being signed.
 
@@ -2335,7 +2335,7 @@ Table of Contents
    | @query            | Active | Request,         | Section 2.2.8 of |
    |                   |        | Related-Response | this document    |
    +-------------------+--------+------------------+------------------+
-   | @query-params     | Active | Request,         | Section 2.2.9 of |
+   | @query-param      | Active | Request,         | Section 2.2.9 of |
    |                   |        | Related-Response | this document    |
    +-------------------+--------+------------------+------------------+
    | @status           | Active | Response         | Section 2.2.10   |
@@ -2694,7 +2694,7 @@ Table of Contents
    need to be signed, avoiding problematic components.  For example, a
    web application framework that relies on rewriting query parameters
    might avoid use of the @query content identifier in favor of sub-
-   indexing the query value using @query-params content identifier
+   indexing the query value using @query-param content identifier
    instead.
 
    Some components are expected to be changed by intermediaries and

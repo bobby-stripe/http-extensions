@@ -4,9 +4,9 @@
 
 HTTP                                                       M. Nottingham
 Internet-Draft                                                    Fastly
-Updates: 7234 (if approved)                                14 March 2022
+Updates: 7234 (if approved)                                22 March 2022
 Intended status: Standards Track                                        
-Expires: 15 September 2022
+Expires: 23 September 2022
 
 
                       HTTP Representation Variants
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 September 2022.
+   This Internet-Draft will expire on 23 September 2022.
 
 Copyright Notice
 

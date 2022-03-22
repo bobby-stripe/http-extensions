@@ -1020,7 +1020,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Backman, et al.</td>
-<td class="center">Expires 15 September 2022</td>
+<td class="center">Expires 23 September 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1033,12 +1033,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dd class="internet-draft">draft-ietf-httpbis-message-signatures</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-03-14" class="published">14 March 2022</time>
+<time datetime="2022-03-22" class="published">22 March 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-09-15">15 September 2022</time></dd>
+<dd class="expires"><time datetime="2022-09-23">23 September 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1097,7 +1097,7 @@ This document also describes a means for requesting that a signature be applied 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 15 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 23 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1849,9 +1849,9 @@ Example-Dict:  a=1, b=2;x=1;y=2, c=(a   b    c)
             <p id="section-2.2-4.16.1">The query portion of the target URI for a request. (<a href="#content-request-query" class="xref">Section 2.2.8</a>)<a href="#section-2.2-4.16.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-2.2-4.17">@query-params</dt>
+<dt id="section-2.2-4.17">@query-param</dt>
           <dd style="margin-left: 1.5em" id="section-2.2-4.18">
-            <p id="section-2.2-4.18.1">The parsed query parameters of the target URI for a request. (<a href="#content-request-query-params" class="xref">Section 2.2.9</a>)<a href="#section-2.2-4.18.1" class="pilcrow">¶</a></p>
+            <p id="section-2.2-4.18.1">A parsed query parameter of the target URI for a request. (<a href="#content-request-query-param" class="xref">Section 2.2.9</a>)<a href="#section-2.2-4.18.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-2.2-4.19">@status</dt>
@@ -2177,13 +2177,13 @@ Host: www.example.com
 <p id="section-2.2.8-12">If used in a related-response, the <code>@query</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.8-12" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="content-request-query-params">
+<div id="content-request-query-param">
 <section id="section-2.2.9">
           <h4 id="name-query-parameters">
 <a href="#section-2.2.9" class="section-number selfRef">2.2.9. </a><a href="#name-query-parameters" class="section-name selfRef">Query Parameters</a>
           </h4>
 <p id="section-2.2.9-1">If a request target URI uses HTML form parameters in the query string as defined in <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>,
-the <code>@query-params</code> component identifier allows addressing of individual query parameters. The query parameters <span class="bcp14">MUST</span> be parsed according to <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5.1</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>, resulting in a list of (<code>nameString</code>, <code>valueString</code>) tuples.
+the <code>@query-param</code> component identifier allows addressing of individual query parameters. The query parameters <span class="bcp14">MUST</span> be parsed according to <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5.1</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>, resulting in a list of (<code>nameString</code>, <code>valueString</code>) tuples.
 The <span class="bcp14">REQUIRED</span> <code>name</code> parameter of each input identifier contains the <code>nameString</code> of a single query parameter as an <code>sf-string</code> value.
 Several different named query parameters <span class="bcp14">MAY</span> be included in the covered components.
 Single named parameters <span class="bcp14">MAY</span> occur in any order in the covered components.<a href="#section-2.2.9-1" class="pilcrow">¶</a></p>
@@ -2201,14 +2201,14 @@ Host: www.example.com
 <p id="section-2.2.9-6">Indicating the <code>baz</code>, <code>qux</code> and <code>param</code> named query parameters in would result in the following <code>@query-param</code> value:<a href="#section-2.2.9-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.9-7">
 <pre>
-"@query-params";name="baz": batman
-"@query-params";name="qux":
-"@query-params";name="param": value
+"@query-param";name="baz": batman
+"@query-param";name="qux":
+"@query-param";name="param": value
 </pre><a href="#section-2.2.9-7" class="pilcrow">¶</a>
 </div>
 <p id="section-2.2.9-8">If a parameter name occurs multiple times in a request, all parameter values of that name <span class="bcp14">MUST</span> be included
 in separate signature base lines in the order in which the parameters occur in the target URI. Note that in some implementations, the order of parsed query parameters is not stable, and this situation could lead to unexpected results. If multiple parameters are common within an application, it is <span class="bcp14">RECOMMENDED</span> to sign the entire query string using the <code>@query</code> component identifier defined in <a href="#content-request-query" class="xref">Section 2.2.8</a>.<a href="#section-2.2.9-8" class="pilcrow">¶</a></p>
-<p id="section-2.2.9-9">If used in a related-response, the <code>@query-params</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.9-9" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-9">If used in a related-response, the <code>@query-param</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.9-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-status-code">
@@ -3345,12 +3345,12 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">
-                  <code>@query-params</code>
+                  <code>@query-param</code>
 </td>
                 <td class="text-left" rowspan="1" colspan="1">Active</td>
                 <td class="text-left" rowspan="1" colspan="1">Request, Related-Response</td>
                 <td class="text-left" rowspan="1" colspan="1">
-                  <a href="#content-request-query-params" class="xref">Section 2.2.9</a> of this document</td>
+                  <a href="#content-request-query-param" class="xref">Section 2.2.9</a> of this document</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">
@@ -3554,7 +3554,7 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
 <a href="#section-7.17" class="section-number selfRef">7.17. </a><a href="#name-choosing-message-components" class="section-name selfRef">Choosing Message Components</a>
         </h3>
 <p id="section-7.17-1">Applications of HTTP Message Signatures need to decide which message components will be covered by the signature. Depending on the application, some components could be expected to be changed by intermediaries prior to the signature's verification. If these components are covered, such changes would, by design, break the signature.<a href="#section-7.17-1" class="pilcrow">¶</a></p>
-<p id="section-7.17-2">However, the HTTP Message Signature standard allows for flexibility in determining which components are signed precisely so that a given application can choose the appropriate portions of the message that need to be signed, avoiding problematic components. For example, a web application framework that relies on rewriting query parameters might avoid use of the <code>@query</code> content identifier in favor of sub-indexing the query value using <code>@query-params</code> content identifier instead.<a href="#section-7.17-2" class="pilcrow">¶</a></p>
+<p id="section-7.17-2">However, the HTTP Message Signature standard allows for flexibility in determining which components are signed precisely so that a given application can choose the appropriate portions of the message that need to be signed, avoiding problematic components. For example, a web application framework that relies on rewriting query parameters might avoid use of the <code>@query</code> content identifier in favor of sub-indexing the query value using <code>@query-param</code> content identifier instead.<a href="#section-7.17-2" class="pilcrow">¶</a></p>
 <p id="section-7.17-3">Some components are expected to be changed by intermediaries and ought not to be signed under most circumstance. The <code>Via</code> and <code>Forwarded</code> header fields, for example, are expected to be manipulated by proxies and other middle-boxes, including replacing or entirely dropping existing values. These fields should not be covered by the signature except in very limited and tightly-coupled scenarios.<a href="#section-7.17-3" class="pilcrow">¶</a></p>
 <p id="section-7.17-4">Additional considerations for choosing signature aspects are discussed in <a href="#application" class="xref">Section 1.5</a>.<a href="#section-7.17-4" class="pilcrow">¶</a></p>
 </section>
