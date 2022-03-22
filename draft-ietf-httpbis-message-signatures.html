@@ -1963,13 +1963,19 @@ POST /path?param=value HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.2-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.2-4">Would result in the following <code>@method</code> value:<a href="#section-2.2.2-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-4">Would result in the following <code>@method</code> component value:<a href="#section-2.2.2-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.2-5">
 <pre>
-"@method": POST
+POST
 </pre><a href="#section-2.2.2-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.2-6">If used in a related-response, the <code>@method</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.2-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.2-6">And the following signature base line:<a href="#section-2.2.2-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.2-7">
+<pre>
+"@method": POST
+</pre><a href="#section-2.2.2-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.2-8">If used in a related-response, the <code>@method</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-target-uri">
@@ -1986,13 +1992,19 @@ POST /path?param=value HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.3-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.3-4">Would result in the following <code>@target-uri</code> value:<a href="#section-2.2.3-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-4">Would result in the following <code>@target-uri</code> component value:<a href="#section-2.2.3-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.3-5">
 <pre>
-"@target-uri": https://www.example.com/path?param=value
+https://www.example.com/path?param=value
 </pre><a href="#section-2.2.3-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.3-6">If used in a related-response, the <code>@target-uri</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.3-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.3-6">And the following signature base line:<a href="#section-2.2.3-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.3-7">
+<pre>
+"@target-uri": https://www.example.com/path?param=value
+</pre><a href="#section-2.2.3-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.3-8">If used in a related-response, the <code>@target-uri</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.3-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-authority">
@@ -2013,11 +2025,17 @@ Host: www.example.com
 <p id="section-2.2.4-4">Would result in the following <code>@authority</code> component value:<a href="#section-2.2.4-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.4-5">
 <pre>
-"@authority": www.example.com
+www.example.com
 </pre><a href="#section-2.2.4-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.4-6">If used in a related-response, the <code>@authority</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.4-6" class="pilcrow">¶</a></p>
-<p id="section-2.2.4-7">The <code>@authority</code> derived component <span class="bcp14">SHOULD</span> be used instead of signing the <code>Host</code> header directly, see <a href="#security-not-fields" class="xref">Section 7.20</a>.<a href="#section-2.2.4-7" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-6">And the following signature base line:<a href="#section-2.2.4-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.4-7">
+<pre>
+"@authority": www.example.com
+</pre><a href="#section-2.2.4-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.4-8">If used in a related-response, the <code>@authority</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.4-8" class="pilcrow">¶</a></p>
+<p id="section-2.2.4-9">The <code>@authority</code> derived component <span class="bcp14">SHOULD</span> be used instead of signing the <code>Host</code> header directly, see <a href="#security-not-fields" class="xref">Section 7.20</a>.<a href="#section-2.2.4-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-scheme">
@@ -2036,13 +2054,19 @@ POST /path?param=value HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.5-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.5-4">Would result in the following <code>@scheme</code> value:<a href="#section-2.2.5-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.5-4">Would result in the following <code>@scheme</code> component value:<a href="#section-2.2.5-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.5-5">
 <pre>
-"@scheme": http
+http
 </pre><a href="#section-2.2.5-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.5-6">If used in a related-response, the <code>@scheme</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.5-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.5-6">And the following signature base line:<a href="#section-2.2.5-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.5-7">
+<pre>
+"@scheme": http
+</pre><a href="#section-2.2.5-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.5-8">If used in a related-response, the <code>@scheme</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.5-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-target">
@@ -2068,48 +2092,72 @@ Host: www.example.com
 <p id="section-2.2.6-5">Would result in the following <code>@request-target</code> component value:<a href="#section-2.2.6-5" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.6-6">
 <pre>
-"@request-target": /path?param=value
+/path?param=value
 </pre><a href="#section-2.2.6-6" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.6-7">The following request to an HTTP proxy with the absolute-form value, containing the fully qualified target URI:<a href="#section-2.2.6-7" class="pilcrow">¶</a></p>
-<div id="section-2.2.6-8">
-<pre class="lang-http-message sourcecode">
-GET https://www.example.com/path?param=value HTTP/1.1
+<p id="section-2.2.6-7">And the following signature base line:<a href="#section-2.2.6-7" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.6-8">
+<pre>
+"@request-target": /path?param=value
 </pre><a href="#section-2.2.6-8" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.6-9">Would result in the following <code>@request-target</code> component value:<a href="#section-2.2.6-9" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-2.2.6-10">
-<pre>
-"@request-target": https://www.example.com/path?param=value
+<p id="section-2.2.6-9">The following request to an HTTP proxy with the absolute-form value, containing the fully qualified target URI:<a href="#section-2.2.6-9" class="pilcrow">¶</a></p>
+<div id="section-2.2.6-10">
+<pre class="lang-http-message sourcecode">
+GET https://www.example.com/path?param=value HTTP/1.1
 </pre><a href="#section-2.2.6-10" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.6-11">The following CONNECT request with an authority-form value, containing the host and port of the target:<a href="#section-2.2.6-11" class="pilcrow">¶</a></p>
-<div id="section-2.2.6-12">
-<pre class="lang-http-message sourcecode">
-CONNECT www.example.com:80 HTTP/1.1
-Host: www.example.com
+<p id="section-2.2.6-11">Would result in the following <code>@request-target</code> component value:<a href="#section-2.2.6-11" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.6-12">
+<pre>
+https://www.example.com/path?param=value
 </pre><a href="#section-2.2.6-12" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.6-13">Would result in the following <code>@request-target</code> component value:<a href="#section-2.2.6-13" class="pilcrow">¶</a></p>
+<p id="section-2.2.6-13">And the following signature base line:<a href="#section-2.2.6-13" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.6-14">
 <pre>
-"@request-target": www.example.com:80
+"@request-target": https://www.example.com/path?param=value
 </pre><a href="#section-2.2.6-14" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.6-15">The following OPTIONS request message with the asterisk-form value, containing a single asterisk <code>*</code> character:<a href="#section-2.2.6-15" class="pilcrow">¶</a></p>
+<p id="section-2.2.6-15">The following CONNECT request with an authority-form value, containing the host and port of the target:<a href="#section-2.2.6-15" class="pilcrow">¶</a></p>
 <div id="section-2.2.6-16">
 <pre class="lang-http-message sourcecode">
-OPTIONS * HTTP/1.1
+CONNECT www.example.com:80 HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.6-16" class="pilcrow">¶</a>
 </div>
 <p id="section-2.2.6-17">Would result in the following <code>@request-target</code> component value:<a href="#section-2.2.6-17" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.6-18">
 <pre>
-"@request-target": *
+www.example.com:80
 </pre><a href="#section-2.2.6-18" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.6-19">If used in a related-response, the <code>@request-target</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.6-19" class="pilcrow">¶</a></p>
+<p id="section-2.2.6-19">And the following signature base line:<a href="#section-2.2.6-19" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.6-20">
+<pre>
+"@request-target": www.example.com:80
+</pre><a href="#section-2.2.6-20" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.6-21">The following OPTIONS request message with the asterisk-form value, containing a single asterisk <code>*</code> character:<a href="#section-2.2.6-21" class="pilcrow">¶</a></p>
+<div id="section-2.2.6-22">
+<pre class="lang-http-message sourcecode">
+OPTIONS * HTTP/1.1
+Host: www.example.com
+</pre><a href="#section-2.2.6-22" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.6-23">Would result in the following <code>@request-target</code> component value:<a href="#section-2.2.6-23" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.6-24">
+<pre>
+*
+</pre><a href="#section-2.2.6-24" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.6-25">And the following signature base line:<a href="#section-2.2.6-25" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.6-26">
+<pre>
+"@request-target": *
+</pre><a href="#section-2.2.6-26" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.6-27">If used in a related-response, the <code>@request-target</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.6-27" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-path">
@@ -2126,13 +2174,19 @@ POST /path?param=value HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.7-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.7-4">Would result in the following <code>@path</code> value:<a href="#section-2.2.7-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.7-4">Would result in the following <code>@path</code> component value:<a href="#section-2.2.7-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.7-5">
 <pre>
-"@path": /path
+/path
 </pre><a href="#section-2.2.7-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.7-6">If used in a related-response, the <code>@path</code> identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.7-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.7-6">And the following signature base line:<a href="#section-2.2.7-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.7-7">
+<pre>
+"@path": /path
+</pre><a href="#section-2.2.7-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.7-8">If used in a related-response, the <code>@path</code> identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.7-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-query">
@@ -2149,32 +2203,50 @@ POST /path?param=value&amp;foo=bar&amp;baz=batman HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.8-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.8-4">Would result in the following <code>@query</code> value:<a href="#section-2.2.8-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.8-4">Would result in the following <code>@query</code> component value:<a href="#section-2.2.8-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.8-5">
 <pre>
-"@query": ?param=value&amp;foo=bar&amp;baz=batman
+?param=value&amp;foo=bar&amp;baz=batman
 </pre><a href="#section-2.2.8-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.8-6">The following request message:<a href="#section-2.2.8-6" class="pilcrow">¶</a></p>
-<div id="section-2.2.8-7">
+<p id="section-2.2.8-6">And the following signature base line:<a href="#section-2.2.8-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.8-7">
+<pre>
+"@query": ?param=value&amp;foo=bar&amp;baz=batman
+</pre><a href="#section-2.2.8-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.8-8">The following request message:<a href="#section-2.2.8-8" class="pilcrow">¶</a></p>
+<div id="section-2.2.8-9">
 <pre class="lang-http-message sourcecode">
 POST /path?queryString HTTP/1.1
 Host: www.example.com
-</pre><a href="#section-2.2.8-7" class="pilcrow">¶</a>
-</div>
-<p id="section-2.2.8-8">Would result in the following <code>@query</code> value:<a href="#section-2.2.8-8" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-2.2.8-9">
-<pre>
-"@query": ?queryString
 </pre><a href="#section-2.2.8-9" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.8-10">If the query string is absent from the request message, the value is the leading <code>?</code> character alone:<a href="#section-2.2.8-10" class="pilcrow">¶</a></p>
+<p id="section-2.2.8-10">Would result in the following <code>@query</code> component value:<a href="#section-2.2.8-10" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.8-11">
 <pre>
-"@query": ?
+?queryString
 </pre><a href="#section-2.2.8-11" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.8-12">If used in a related-response, the <code>@query</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.8-12" class="pilcrow">¶</a></p>
+<p id="section-2.2.8-12">And the following signature base line:<a href="#section-2.2.8-12" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.8-13">
+<pre>
+"@query": ?queryString
+</pre><a href="#section-2.2.8-13" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.8-14">If the query string is absent from the request message, the value is the leading <code>?</code> character alone:<a href="#section-2.2.8-14" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.8-15">
+<pre>
+?
+</pre><a href="#section-2.2.8-15" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.8-16">Resulting in the following signature base line:<a href="#section-2.2.8-16" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.8-17">
+<pre>
+"@query": ?
+</pre><a href="#section-2.2.8-17" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.8-18">If used in a related-response, the <code>@query</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.8-18" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-query-param">
@@ -2198,17 +2270,21 @@ POST /path?param=value&amp;foo=bar&amp;baz=batman&amp;qux= HTTP/1.1
 Host: www.example.com
 </pre><a href="#section-2.2.9-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.9-6">Indicating the <code>baz</code>, <code>qux</code> and <code>param</code> named query parameters would result in the following <code>@query-param</code> value:<a href="#section-2.2.9-6" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-2.2.9-7">
+<p id="section-2.2.9-6">Indicating the <code>baz</code>, <code>qux</code> and <code>param</code> named query parameters in would result in the following <code>@query-param</code> component values:<a href="#section-2.2.9-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-7"><em>baz:</em> <code>batman</code><a href="#section-2.2.9-7" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-8"><em>qux:</em> an empty string<a href="#section-2.2.9-8" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-9"><em>param:</em> <code>value</code><a href="#section-2.2.9-9" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-10">And the following signature base lines:<a href="#section-2.2.9-10" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.9-11">
 <pre>
 "@query-param";name="baz": batman
 "@query-param";name="qux":
 "@query-param";name="param": value
-</pre><a href="#section-2.2.9-7" class="pilcrow">¶</a>
+</pre><a href="#section-2.2.9-11" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.9-8">If a parameter name occurs multiple times in a request, all parameter values of that name <span class="bcp14">MUST</span> be included
-in separate signature base lines in the order in which the parameters occur in the target URI. Note that in some implementations, the order of parsed query parameters is not stable, and this situation could lead to unexpected results. If multiple parameters are common within an application, it is <span class="bcp14">RECOMMENDED</span> to sign the entire query string using the <code>@query</code> component identifier defined in <a href="#content-request-query" class="xref">Section 2.2.8</a>.<a href="#section-2.2.9-8" class="pilcrow">¶</a></p>
-<p id="section-2.2.9-9">If used in a related-response, the <code>@query-param</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.9-9" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-12">If a parameter name occurs multiple times in a request, all parameter values of that name <span class="bcp14">MUST</span> be included
+in separate signature base lines in the order in which the parameters occur in the target URI. Note that in some implementations, the order of parsed query parameters is not stable, and this situation could lead to unexpected results. If multiple parameters are common within an application, it is <span class="bcp14">RECOMMENDED</span> to sign the entire query string using the <code>@query</code> component identifier defined in <a href="#content-request-query" class="xref">Section 2.2.8</a>.<a href="#section-2.2.9-12" class="pilcrow">¶</a></p>
+<p id="section-2.2.9-13">If used in a related-response, the <code>@query-param</code> component identifier refers to the associated component value of the request that triggered the response message being signed.<a href="#section-2.2.9-13" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-status-code">
@@ -2225,13 +2301,19 @@ HTTP/1.1 200 OK
 Date: Fri, 26 Mar 2010 00:05:00 GMT
 </pre><a href="#section-2.2.10-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.10-4">Would result in the following <code>@status</code> value:<a href="#section-2.2.10-4" class="pilcrow">¶</a></p>
+<p id="section-2.2.10-4">Would result in the following <code>@status</code> component value:<a href="#section-2.2.10-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.2.10-5">
 <pre>
-"@status": 200
+200
 </pre><a href="#section-2.2.10-5" class="pilcrow">¶</a>
 </div>
-<p id="section-2.2.10-6">The <code>@status</code> component identifier <span class="bcp14">MUST NOT</span> be used in a request message.<a href="#section-2.2.10-6" class="pilcrow">¶</a></p>
+<p id="section-2.2.10-6">And the following signature base line:<a href="#section-2.2.10-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2.2.10-7">
+<pre>
+"@status": 200
+</pre><a href="#section-2.2.10-7" class="pilcrow">¶</a>
+</div>
+<p id="section-2.2.10-8">The <code>@status</code> component identifier <span class="bcp14">MUST NOT</span> be used in a request message.<a href="#section-2.2.10-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="content-request-response">
