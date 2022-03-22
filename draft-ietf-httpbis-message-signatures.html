@@ -1293,7 +1293,7 @@ This document also describes a means for requesting that a signature be applied 
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3">
-                <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="xref">6.3</a>.  <a href="#name-http-signature-derived-comp" class="xref">HTTP Signature Derived Component Identifiers Registry</a></p>
+                <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="xref">6.3</a>.  <a href="#name-http-signature-derived-comp" class="xref">HTTP Signature Derived Component Names Registry</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.1">
                     <p id="section-toc.1-1.6.2.3.2.1.1"><a href="#section-6.3.1" class="xref">6.3.1</a>.  <a href="#name-registration-template-3" class="xref">Registration Template</a></p>
@@ -1360,7 +1360,7 @@ This document also describes a means for requesting that a signature be applied 
                 <p id="section-toc.1-1.7.2.17.1"><a href="#section-7.17" class="xref">7.17</a>. <a href="#name-choosing-message-components" class="xref">Choosing Message Components</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.18">
-                <p id="section-toc.1-1.7.2.18.1"><a href="#section-7.18" class="xref">7.18</a>. <a href="#name-confusing-http-field-names-" class="xref">Confusing HTTP Field Names for Derived Component Identifiers</a></p>
+                <p id="section-toc.1-1.7.2.18.1"><a href="#section-7.18" class="xref">7.18</a>. <a href="#name-confusing-http-field-names-" class="xref">Confusing HTTP Field Names for Derived Component Names</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.19">
                 <p id="section-toc.1-1.7.2.19.1"><a href="#section-7.19" class="xref">7.19</a>. <a href="#name-non-deterministic-signature" class="xref">Non-deterministic Signature Primitives</a></p>
@@ -1581,44 +1581,49 @@ appear in all capitals, as shown here.<a href="#section-1.4-1" class="pilcrow">�
             <p id="section-1.4-6.8.1">A portion of an HTTP message that is capable of being covered by an HTTP Message Signature.<a href="#section-1.4-6.8.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.9">HTTP Message Component Identifier:</dt>
+<dt id="section-1.4-6.9">HTTP Message Component Name:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.10">
-            <p id="section-1.4-6.10.1">A value that uniquely identifies a specific HTTP Message Component in respect to a particular HTTP Message Signature and the HTTP Message it applies to.<a href="#section-1.4-6.10.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.10.1">A name that identifies an HTTP Message Component.<a href="#section-1.4-6.10.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.11">HTTP Message Component Value:</dt>
+<dt id="section-1.4-6.11">HTTP Message Component Identifier:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.12">
-            <p id="section-1.4-6.12.1">The value associated with a given component identifier within the context of a particular HTTP Message. Component values are derived from the HTTP Message and are usually subject to a canonicalization process.<a href="#section-1.4-6.12.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.12.1">The combination of an HTTP Message Component Name and any parameters that uniquely identifies a specific HTTP Message Component in respect to a particular HTTP Message Signature and the HTTP Message it applies to.<a href="#section-1.4-6.12.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.13">Covered Components:</dt>
+<dt id="section-1.4-6.13">HTTP Message Component Value:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.14">
-            <p id="section-1.4-6.14.1">An ordered set of HTTP message component identifiers for fields (<a href="#http-header" class="xref">Section 2.1</a>) and derived components (<a href="#derived-components" class="xref">Section 2.2</a>) that indicates the set of message components covered by the signature, never including the <code>@signature-params</code> identifier itself. The order of this set is preserved and communicated between the signer and verifier to facilitate reconstruction of the signature base.<a href="#section-1.4-6.14.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.14.1">The value associated with a given component identifier within the context of a particular HTTP Message. Component values are derived from the HTTP Message and are usually subject to a canonicalization process.<a href="#section-1.4-6.14.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.15">Signature Base:</dt>
+<dt id="section-1.4-6.15">Covered Components:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.16">
-            <p id="section-1.4-6.16.1">The sequence of bytes processed by the cryptographic algorithm to produce or verify the HTTP Message Signature. The signature base is generated by the signer and verifier using the covered components set and the HTTP Message.<a href="#section-1.4-6.16.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.16.1">An ordered set of HTTP message component identifiers for fields (<a href="#http-header" class="xref">Section 2.1</a>) and derived components (<a href="#derived-components" class="xref">Section 2.2</a>) that indicates the set of message components covered by the signature, never including the <code>@signature-params</code> identifier itself. The order of this set is preserved and communicated between the signer and verifier to facilitate reconstruction of the signature base.<a href="#section-1.4-6.16.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.17">HTTP Message Signature Algorithm:</dt>
+<dt id="section-1.4-6.17">Signature Base:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.18">
-            <p id="section-1.4-6.18.1">A cryptographic algorithm that describes the signing and verification process for the signature, defined in terms of the <code>HTTP_SIGN</code> and <code>HTTP_VERIFY</code> primitives described in <a href="#signature-methods" class="xref">Section 3.3</a>.<a href="#section-1.4-6.18.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.18.1">The sequence of bytes processed by the cryptographic algorithm to produce or verify the HTTP Message Signature. The signature base is generated by the signer and verifier using the covered components set and the HTTP Message.<a href="#section-1.4-6.18.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.19">Key Material:</dt>
+<dt id="section-1.4-6.19">HTTP Message Signature Algorithm:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.20">
-            <p id="section-1.4-6.20.1">The key material required to create or verify the signature. The key material is often identified with an explicit key identifier, allowing the signer to indicate to the verifier which key was used.<a href="#section-1.4-6.20.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.20.1">A cryptographic algorithm that describes the signing and verification process for the signature, defined in terms of the <code>HTTP_SIGN</code> and <code>HTTP_VERIFY</code> primitives described in <a href="#signature-methods" class="xref">Section 3.3</a>.<a href="#section-1.4-6.20.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.21">Creation Time:</dt>
+<dt id="section-1.4-6.21">Key Material:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.22">
-            <p id="section-1.4-6.22.1">A timestamp representing the point in time that the signature was generated, as asserted by the signer.<a href="#section-1.4-6.22.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.22.1">The key material required to create or verify the signature. The key material is often identified with an explicit key identifier, allowing the signer to indicate to the verifier which key was used.<a href="#section-1.4-6.22.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-1.4-6.23">Expiration Time:</dt>
+<dt id="section-1.4-6.23">Creation Time:</dt>
           <dd style="margin-left: 1.5em" id="section-1.4-6.24">
-            <p id="section-1.4-6.24.1">A timestamp representing the point in time after which the signature should no longer be accepted by the verifier, as asserted by the signer.<a href="#section-1.4-6.24.1" class="pilcrow">¶</a></p>
+            <p id="section-1.4-6.24.1">A timestamp representing the point in time that the signature was generated, as asserted by the signer.<a href="#section-1.4-6.24.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-1.4-6.25">Expiration Time:</dt>
+          <dd style="margin-left: 1.5em" id="section-1.4-6.26">
+            <p id="section-1.4-6.26.1">A timestamp representing the point in time after which the signature should no longer be accepted by the verifier, as asserted by the signer.<a href="#section-1.4-6.26.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -1656,14 +1661,15 @@ appear in all capitals, as shown here.<a href="#section-1.4-1" class="pilcrow">�
 <p id="section-2-1">In order to allow signers and verifiers to establish which components are covered by a signature, this document defines component identifiers for components covered by an HTTP Message Signature, a set of rules for deriving and canonicalizing the values associated with these component identifiers from the HTTP Message, and the means for combining these canonicalized values into a signature base. The values for these items <span class="bcp14">MUST</span> be accessible to both the signer and the verifier of the message, which means these are usually derived from aspects of the HTTP message or signature itself.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">Some HTTP message components can undergo transformations that change the bitwise value without altering meaning of the component's value (for example, the merging together of header fields with the same name).  Message component values must therefore be canonicalized before it is signed, to ensure that a signature can be verified despite such intermediary transformations. This document defines rules for each component identifier that transform the identifier's associated component value into such a canonical form.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">Component identifiers are serialized using the production grammar defined by <span>[<a href="#RFC8941" class="xref">RFC8941</a>], <a href="https://rfc-editor.org/rfc/rfc8941#section-4" class="relref">Section 4</a></span>.
-The component identifier itself is an <code>sf-string</code> value and <span class="bcp14">MAY</span> define parameters which are included using the <code>parameters</code> rule.<a href="#section-2-3" class="pilcrow">¶</a></p>
+The component identifier has a component name, which is serialized as an <code>sf-string</code> value. The component identifier <span class="bcp14">MAY</span> defined parameters which are included using the <code>parameters</code> rule.<a href="#section-2-3" class="pilcrow">¶</a></p>
 <div id="section-2-4">
 <pre class="lang-abnf sourcecode">
-component-identifier = sf-string parameters
+component-identifier = component-name parameters
+component-name = sf-string
 </pre><a href="#section-2-4" class="pilcrow">¶</a>
 </div>
-<p id="section-2-5">Note that this means the serialization of the component identifier itself is encased in double quotes, with parameters following as a semicolon-separated list, such as <code>"cache-control"</code>, <code>"date"</code>, or <code>"@signature-params"</code>.<a href="#section-2-5" class="pilcrow">¶</a></p>
-<p id="section-2-6">Component identifiers, including component identifiers with parameters, <span class="bcp14">MUST NOT</span> be repeated within a single list of covered components. Component identifiers with different parameter values <span class="bcp14">MAY</span> be repeated within a single list of covered components.<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-5">Note that this means the serialization of the component name itself is encased in double quotes, with parameters following as a semicolon-separated list, such as <code>"cache-control"</code>, <code>"date"</code>, or <code>"@signature-params"</code>.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">One component identifier is distinct from another if either the component name or its parameters differ. Within a single list of covered components, each component identifier <span class="bcp14">MUST</span> be distinct from every other component identifier. Multiple component identifiers having the same component name <span class="bcp14">MAY</span> be included if they have parameters that make them distinct.<a href="#section-2-6" class="pilcrow">¶</a></p>
 <p id="section-2-7">The component value associated with a component identifier is defined by the identifier itself. Component values <span class="bcp14">MUST NOT</span> contain newline (<code>\n</code>) characters.<a href="#section-2-7" class="pilcrow">¶</a></p>
 <p id="section-2-8">The following sections define component identifier types, their parameters, their associated values, and the canonicalization rules for their values. The method for combining component identifiers into the signature base is defined in <a href="#create-sig-input" class="xref">Section 2.3</a>.<a href="#section-2-8" class="pilcrow">¶</a></p>
 <div id="http-header">
@@ -1671,7 +1677,7 @@ component-identifier = sf-string parameters
         <h3 id="name-http-fields">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-http-fields" class="section-name selfRef">HTTP Fields</a>
         </h3>
-<p id="section-2.1-1">The component identifier for an HTTP field is the lowercased form of its field name. While HTTP field names are case-insensitive, implementations <span class="bcp14">MUST</span> use lowercased field names (e.g., <code>content-type</code>, <code>date</code>, <code>etag</code>) when using them as component identifiers.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-1">The component name for an HTTP field is the lowercased form of its field name. While HTTP field names are case-insensitive, implementations <span class="bcp14">MUST</span> use lowercased field names (e.g., <code>content-type</code>, <code>date</code>, <code>etag</code>) when using them as component names.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 <p id="section-2.1-2">Unless overridden by additional parameters and rules, the HTTP field value <span class="bcp14">MUST</span> be canonicalized as a single combined value as defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-5.2" class="relref">Section 5.2</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
 <p id="section-2.1-3">If the combined value is not available for a given header, the following algorithm will produce canonicalized results for an implementation:<a href="#section-2.1-3" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.1-4">
@@ -1805,9 +1811,9 @@ Example-Dict:  a=1, b=2;x=1;y=2, c=(a   b    c)
         <h3 id="name-derived-components">
 <a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-derived-components" class="section-name selfRef">Derived Components</a>
         </h3>
-<p id="section-2.2-1">In addition to HTTP fields, there are a number of different components that can be derived from the control data, processing context, or other aspects of the HTTP message being signed. Such derived components can be included in the signature base by defining a component identifier and the derivation method for its component value.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
-<p id="section-2.2-2">Derived component identifiers <span class="bcp14">MUST</span> start with the "at" <code>@</code> character. This differentiates derived component identifiers from HTTP field names, which cannot contain the <code>@</code> character as per <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-5.1" class="relref">Section 5.1</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>. Processors of HTTP Message Signatures <span class="bcp14">MUST</span> treat derived component identifiers separately from field names, as discussed in <a href="#security-lazy-header-parser" class="xref">Section 7.18</a>.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
-<p id="section-2.2-3">This specification defines the following derived component identifiers:<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2-1">In addition to HTTP fields, there are a number of different components that can be derived from the control data, processing context, or other aspects of the HTTP message being signed. Such derived components can be included in the signature base by defining a component name, possible parameters, and the derivation method for its component value.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2-2">Derived component names <span class="bcp14">MUST</span> start with the "at" <code>@</code> character. This differentiates derived component names from HTTP field names, which cannot contain the <code>@</code> character as per <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-5.1" class="relref">Section 5.1</a> of [<a href="#SEMANTICS" class="xref">SEMANTICS</a>]</span>. Processors of HTTP Message Signatures <span class="bcp14">MUST</span> treat derived component names separately from field names, as discussed in <a href="#security-lazy-header-parser" class="xref">Section 7.18</a>.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
+<p id="section-2.2-3">This specification defines the following derived components:<a href="#section-2.2-3" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.2-4">
           <dt id="section-2.2-4.1">@signature-params</dt>
           <dd style="margin-left: 1.5em" id="section-2.2-4.2">
@@ -1865,7 +1871,7 @@ Example-Dict:  a=1, b=2;x=1;y=2, c=(a   b    c)
 </dd>
         <dd class="break"></dd>
 </dl>
-<p id="section-2.2-5">Additional derived component identifiers <span class="bcp14">MAY</span> be defined and registered in the HTTP Signatures Derived Component Identifier Registry. (<a href="#content-registry" class="xref">Section 6.3</a>)<a href="#section-2.2-5" class="pilcrow">¶</a></p>
+<p id="section-2.2-5">Additional derived component names <span class="bcp14">MAY</span> be defined and registered in the HTTP Signatures Derived Component Name Registry. (<a href="#content-registry" class="xref">Section 6.3</a>)<a href="#section-2.2-5" class="pilcrow">¶</a></p>
 <p id="section-2.2-6">Derived components can be applied in one or more of three targets:<a href="#section-2.2-6" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.2-7">
           <dt id="section-2.2-7.1">request:</dt>
@@ -1884,7 +1890,7 @@ Example-Dict:  a=1, b=2;x=1;y=2, c=(a   b    c)
 </dd>
         <dd class="break"></dd>
 </dl>
-<p id="section-2.2-8">A component identifier definition <span class="bcp14">MUST</span> define all targets to which it can be applied.<a href="#section-2.2-8" class="pilcrow">¶</a></p>
+<p id="section-2.2-8">A derived component definition <span class="bcp14">MUST</span> define all targets to which it can be applied.<a href="#section-2.2-8" class="pilcrow">¶</a></p>
 <p id="section-2.2-9">The component value <span class="bcp14">MUST</span> be derived from the HTTP message being signed or the context in which the derivation occurs. The derived component value <span class="bcp14">MUST</span> be of the following form:<a href="#section-2.2-9" class="pilcrow">¶</a></p>
 <div id="section-2.2-10">
 <pre class="lang-abnf sourcecode">
@@ -1897,7 +1903,7 @@ derived-component-value = *VCHAR
 <a href="#section-2.2.1" class="section-number selfRef">2.2.1. </a><a href="#name-signature-parameters" class="section-name selfRef">Signature Parameters</a>
           </h4>
 <p id="section-2.2.1-1">HTTP Message Signatures have metadata properties that provide information regarding the signature's generation and verification, such as the set of covered components, a timestamp, identifiers for verification key material, and other utilities.<a href="#section-2.2.1-1" class="pilcrow">¶</a></p>
-<p id="section-2.2.1-2">The signature parameters component identifier is <code>@signature-params</code>. This message component's value is <span class="bcp14">REQUIRED</span> as part of the <span><a href="#create-sig-input" class="xref">signature base</a> (<a href="#create-sig-input" class="xref">Section 2.3</a>)</span> but the component identifier <span class="bcp14">MUST NOT</span> be enumerated within the set of covered components itself.<a href="#section-2.2.1-2" class="pilcrow">¶</a></p>
+<p id="section-2.2.1-2">The signature parameters component name is <code>@signature-params</code>. This message component's value is <span class="bcp14">REQUIRED</span> as part of the <span><a href="#create-sig-input" class="xref">signature base</a> (<a href="#create-sig-input" class="xref">Section 2.3</a>)</span> but the component identifier <span class="bcp14">MUST NOT</span> be enumerated within the set of covered components itself.<a href="#section-2.2.1-2" class="pilcrow">¶</a></p>
 <p id="section-2.2.1-3">The signature parameters component value is the serialization of the signature parameters for this signature, including the covered components set with all associated parameters. These parameters include any of the following:<a href="#section-2.2.1-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.2.1-4.1">
@@ -1954,7 +1960,7 @@ NOTE: '\' line wrapping per RFC 8792
           <h4 id="name-method">
 <a href="#section-2.2.2" class="section-number selfRef">2.2.2. </a><a href="#name-method" class="section-name selfRef">Method</a>
           </h4>
-<p id="section-2.2.2-1">The <code>@method</code> component identifier refers to the HTTP method of a request message. The component value is canonicalized by taking the value of the method as a string. Note that the method name is case-sensitive as per <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-9.1" class="relref">Section 9.1</a></span>, and conventionally standardized method names are uppercase US-ASCII.
+<p id="section-2.2.2-1">The <code>@method</code> derived component refers to the HTTP method of a request message. The component value is canonicalized by taking the value of the method as a string. Note that the method name is case-sensitive as per <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-9.1" class="relref">Section 9.1</a></span>, and conventionally standardized method names are uppercase US-ASCII.
 If used, the <code>@method</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.2-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.2-2">For example, the following request message:<a href="#section-2.2.2-2" class="pilcrow">¶</a></p>
 <div id="section-2.2.2-3">
@@ -1983,7 +1989,7 @@ POST
           <h4 id="name-target-uri">
 <a href="#section-2.2.3" class="section-number selfRef">2.2.3. </a><a href="#name-target-uri" class="section-name selfRef">Target URI</a>
           </h4>
-<p id="section-2.2.3-1">The <code>@target-uri</code> component identifier refers to the target URI of a request message. The component value is the full absolute target URI of the request, potentially assembled from all available parts including the authority and request target as described in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-7.1" class="relref">Section 7.1</a></span>.
+<p id="section-2.2.3-1">The <code>@target-uri</code> derived component refers to the target URI of a request message. The component value is the full absolute target URI of the request, potentially assembled from all available parts including the authority and request target as described in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-7.1" class="relref">Section 7.1</a></span>.
 If used, the <code>@target-uri</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.3-2">For example, the following message sent over HTTPS:<a href="#section-2.2.3-2" class="pilcrow">¶</a></p>
 <div id="section-2.2.3-3">
@@ -2012,7 +2018,7 @@ https://www.example.com/path?param=value
           <h4 id="name-authority">
 <a href="#section-2.2.4" class="section-number selfRef">2.2.4. </a><a href="#name-authority" class="section-name selfRef">Authority</a>
           </h4>
-<p id="section-2.2.4-1">The <code>@authority</code> component identifier refers to the authority component of the target URI of the HTTP request message, as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-7.2" class="relref">Section 7.2</a></span>. In HTTP 1.1, this is usually conveyed using the <code>Host</code> header, while in HTTP 2 and HTTP 3 it is conveyed using the <code>:authority</code> pseudo-header. The value is the fully-qualified authority component of the request, comprised of the host and, optionally, port of the request target, as a string.
+<p id="section-2.2.4-1">The <code>@authority</code> derived component refers to the authority component of the target URI of the HTTP request message, as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-7.2" class="relref">Section 7.2</a></span>. In HTTP 1.1, this is usually conveyed using the <code>Host</code> header, while in HTTP 2 and HTTP 3 it is conveyed using the <code>:authority</code> pseudo-header. The value is the fully-qualified authority component of the request, comprised of the host and, optionally, port of the request target, as a string.
 The component value <span class="bcp14">MUST</span> be normalized according to the rules in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2.3" class="relref">Section 4.2.3</a></span>. Namely, the host name is normalized to lowercase and the default port is omitted.
 If used, the <code>@authority</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.4-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.4-2">For example, the following request message:<a href="#section-2.2.4-2" class="pilcrow">¶</a></p>
@@ -2043,7 +2049,7 @@ www.example.com
           <h4 id="name-scheme">
 <a href="#section-2.2.5" class="section-number selfRef">2.2.5. </a><a href="#name-scheme" class="section-name selfRef">Scheme</a>
           </h4>
-<p id="section-2.2.5-1">The <code>@scheme</code> component identifier refers to the scheme of the target URL of the HTTP request message. The component value is the scheme as a string as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2" class="relref">Section 4.2</a></span>.
+<p id="section-2.2.5-1">The <code>@scheme</code> derived component refers to the scheme of the target URL of the HTTP request message. The component value is the scheme as a string as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2" class="relref">Section 4.2</a></span>.
 While the scheme itself is case-insensitive, it <span class="bcp14">MUST</span> be normalized to lowercase for
 inclusion in the signature base.
 If used, the <code>@scheme</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.5-1" class="pilcrow">¶</a></p>
@@ -2074,13 +2080,13 @@ http
           <h4 id="name-request-target">
 <a href="#section-2.2.6" class="section-number selfRef">2.2.6. </a><a href="#name-request-target" class="section-name selfRef">Request Target</a>
           </h4>
-<p id="section-2.2.6-1">The <code>@request-target</code> component identifier refers to the full request target of the HTTP request message,
+<p id="section-2.2.6-1">The <code>@request-target</code> derived component refers to the full request target of the HTTP request message,
 as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-7.1" class="relref">Section 7.1</a></span>. The component value of the request target can take different forms,
 depending on the type of request, as described below.
 If used, the <code>@request-target</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.6-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.6-2">For HTTP 1.1, the component value is equivalent to the request target
 portion of the request line. However, this value is more difficult to reliably construct in
-other versions of HTTP. Therefore, it is <span class="bcp14">NOT RECOMMENDED</span> that this identifier be used
+other versions of HTTP. Therefore, it is <span class="bcp14">NOT RECOMMENDED</span> that this component be used
 when versions of HTTP other than 1.1 might be in use.<a href="#section-2.2.6-2" class="pilcrow">¶</a></p>
 <p id="section-2.2.6-3">The origin form value is combination of the absolute path and query components of the request URL. For example, the following request message:<a href="#section-2.2.6-3" class="pilcrow">¶</a></p>
 <div id="section-2.2.6-4">
@@ -2165,7 +2171,7 @@ Host: www.example.com
           <h4 id="name-path">
 <a href="#section-2.2.7" class="section-number selfRef">2.2.7. </a><a href="#name-path" class="section-name selfRef">Path</a>
           </h4>
-<p id="section-2.2.7-1">The <code>@path</code> component identifier refers to the target path of the HTTP request message. The component value is the absolute path of the request target defined by <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>, with no query component and no trailing <code>?</code> character. The value is normalized according to the rules in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2.3" class="relref">Section 4.2.3</a></span>. Namely, an empty path string is normalized as a single slash <code>/</code> character, and path components are represented by their values after decoding any percent-encoded octets.
+<p id="section-2.2.7-1">The <code>@path</code> derived component refers to the target path of the HTTP request message. The component value is the absolute path of the request target defined by <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>, with no query component and no trailing <code>?</code> character. The value is normalized according to the rules in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2.3" class="relref">Section 4.2.3</a></span>. Namely, an empty path string is normalized as a single slash <code>/</code> character, and path components are represented by their values after decoding any percent-encoded octets.
 If used, the <code>@path</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.7-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.7-2">For example, the following request message:<a href="#section-2.2.7-2" class="pilcrow">¶</a></p>
 <div id="section-2.2.7-3">
@@ -2194,7 +2200,7 @@ Host: www.example.com
           <h4 id="name-query">
 <a href="#section-2.2.8" class="section-number selfRef">2.2.8. </a><a href="#name-query" class="section-name selfRef">Query</a>
           </h4>
-<p id="section-2.2.8-1">The <code>@query</code> component identifier refers to the query component of the HTTP request message. The component value is the entire normalized query string defined by <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>, including the leading <code>?</code> character. The value is normalized according to the rules in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2.3" class="relref">Section 4.2.3</a></span>. Namely, percent-encoded octets are decoded.
+<p id="section-2.2.8-1">The <code>@query</code> derived component refers to the query component of the HTTP request message. The component value is the entire normalized query string defined by <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>, including the leading <code>?</code> character. The value is normalized according to the rules in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-4.2.3" class="relref">Section 4.2.3</a></span>. Namely, percent-encoded octets are decoded.
 If used, the <code>@query</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.8-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.8-2">For example, the following request message:<a href="#section-2.2.8-2" class="pilcrow">¶</a></p>
 <div id="section-2.2.8-3">
@@ -2255,7 +2261,7 @@ Host: www.example.com
 <a href="#section-2.2.9" class="section-number selfRef">2.2.9. </a><a href="#name-query-parameters" class="section-name selfRef">Query Parameters</a>
           </h4>
 <p id="section-2.2.9-1">If a request target URI uses HTML form parameters in the query string as defined in <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>,
-the <code>@query-param</code> component identifier allows addressing of individual query parameters. The query parameters <span class="bcp14">MUST</span> be parsed according to <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5.1</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>, resulting in a list of (<code>nameString</code>, <code>valueString</code>) tuples.
+the <code>@query-param</code> derived component allows addressing of individual query parameters. The query parameters <span class="bcp14">MUST</span> be parsed according to <span><a href="#HTMLURL" class="xref">HTMLURL, Section 5.1</a> [<a href="#HTMLURL" class="xref">HTMLURL</a>]</span>, resulting in a list of (<code>nameString</code>, <code>valueString</code>) tuples.
 The <span class="bcp14">REQUIRED</span> <code>name</code> parameter of each component identifier contains the <code>nameString</code> of a single query parameter as an <code>sf-string</code> value.
 Several different named query parameters <span class="bcp14">MAY</span> be included in the covered components.
 Single named parameters <span class="bcp14">MAY</span> occur in any order in the covered components.<a href="#section-2.2.9-1" class="pilcrow">¶</a></p>
@@ -2292,7 +2298,7 @@ in separate signature base lines in the order in which the parameters occur in t
           <h4 id="name-status-code">
 <a href="#section-2.2.10" class="section-number selfRef">2.2.10. </a><a href="#name-status-code" class="section-name selfRef">Status Code</a>
           </h4>
-<p id="section-2.2.10-1">The <code>@status</code> component identifier refers to the three-digit numeric HTTP status code of a response message as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-15" class="relref">Section 15</a></span>. The component value is the serialized three-digit integer of the HTTP response code, with no descriptive text.
+<p id="section-2.2.10-1">The <code>@status</code> derived component refers to the three-digit numeric HTTP status code of a response message as defined in <span>[<a href="#SEMANTICS" class="xref">SEMANTICS</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-15" class="relref">Section 15</a></span>. The component value is the serialized three-digit integer of the HTTP response code, with no descriptive text.
 If used, the <code>@status</code> component identifier <span class="bcp14">MUST</span> occur only once in the covered components.<a href="#section-2.2.10-1" class="pilcrow">¶</a></p>
 <p id="section-2.2.10-2">For example, the following response message:<a href="#section-2.2.10-2" class="pilcrow">¶</a></p>
 <div id="section-2.2.10-3">
@@ -2321,7 +2327,7 @@ Date: Fri, 26 Mar 2010 00:05:00 GMT
           <h4 id="name-request-response-signature-">
 <a href="#section-2.2.11" class="section-number selfRef">2.2.11. </a><a href="#name-request-response-signature-" class="section-name selfRef">Request-Response Signature Binding</a>
           </h4>
-<p id="section-2.2.11-1">When a signed request message results in a signed response message, the <code>@request-response</code> component identifier can be used to cryptographically link the request and the response to each other by including the identified request signature value in the response's signature base without copying the value of the request's signature to the response directly. This component identifier has a single <span class="bcp14">REQUIRED</span> parameter:<a href="#section-2.2.11-1" class="pilcrow">¶</a></p>
+<p id="section-2.2.11-1">When a signed request message results in a signed response message, the <code>@request-response</code> derived component can be used to cryptographically link the request and the response to each other by including the identified request signature value in the response's signature base without copying the value of the request's signature to the response directly. This derived component has a single <span class="bcp14">REQUIRED</span> parameter:<a href="#section-2.2.11-1" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.2.11-2">
             <dt id="section-2.2.11-2.1"><code>key</code></dt>
             <dd style="margin-left: 1.5em" id="section-2.2.11-2.2">
@@ -2431,7 +2437,7 @@ signature-params-line = DQUOTE "@signature-params" DQUOTE ":" SP inner-list
           <li id="section-2.3-4.2">
             <p id="section-2.3-4.2.1">For each message component item in the covered components set (in order):<a href="#section-2.3-4.2.1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-2.3-4.2.2">
-<li id="section-2.3-4.2.2.1">Append the component identifier for the covered component serialized according to the <code>component-identifier</code> rule. Note that this serialization places the component identifier in double quotes and appends any parameters outside of the quotes.<a href="#section-2.3-4.2.2.1" class="pilcrow">¶</a>
+<li id="section-2.3-4.2.2.1">Append the component identifier for the covered component serialized according to the <code>component-identifier</code> rule. Note that this serialization places the component name in double quotes and appends any parameters outside of the quotes.<a href="#section-2.3-4.2.2.1" class="pilcrow">¶</a>
 </li>
               <li id="section-2.3-4.2.2.2">Append a single colon <code>:</code><a href="#section-2.3-4.2.2.2" class="pilcrow">¶</a>
 </li>
@@ -2440,9 +2446,9 @@ signature-params-line = DQUOTE "@signature-params" DQUOTE ":" SP inner-list
               <li id="section-2.3-4.2.2.4">
                 <p id="section-2.3-4.2.2.4.1">Determine the component value for the component identifier.<a href="#section-2.3-4.2.2.4.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2.3-4.2.2.4.2.1">If the component identifier starts with an "at" character (<code>@</code>), derive the component's value from the message according to the specific rules defined for the derived component identifier, as in <a href="#derived-components" class="xref">Section 2.2</a>. If the derived component identifier is unknown or the value cannot be derived, produce an error.<a href="#section-2.3-4.2.2.4.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2.3-4.2.2.4.2.1">If the component name starts with an "at" character (<code>@</code>), derive the component's value from the message according to the specific rules defined for the derived component, as in <a href="#derived-components" class="xref">Section 2.2</a>. If the derived component name is unknown or the value cannot be derived, produce an error.<a href="#section-2.3-4.2.2.4.2.1" class="pilcrow">¶</a>
 </li>
-                  <li class="normal" id="section-2.3-4.2.2.4.2.2">If the component identifier does not start with an "at" character (<code>@</code>), canonicalize the HTTP field value as described in <a href="#http-header" class="xref">Section 2.1</a>. If the value cannot be calculated, produce an error.<a href="#section-2.3-4.2.2.4.2.2" class="pilcrow">¶</a>
+                  <li class="normal" id="section-2.3-4.2.2.4.2.2">If the component name does not start with an "at" character (<code>@</code>), canonicalize the HTTP field value as described in <a href="#http-header" class="xref">Section 2.1</a>. If the value cannot be calculated, produce an error.<a href="#section-2.3-4.2.2.4.2.2" class="pilcrow">¶</a>
 </li>
                 </ul>
 </li>
@@ -2470,9 +2476,9 @@ signature-params-line = DQUOTE "@signature-params" DQUOTE ":" SP inner-list
         </ol>
 <p id="section-2.3-5">If covered components reference a component identifier that cannot be resolved to a component value in the message, the implementation <span class="bcp14">MUST</span> produce an error and not create an input string. Such situations are included but not limited to:<a href="#section-2.3-5" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2.3-6.1">The signer or verifier does not understand the derived component identifier.<a href="#section-2.3-6.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2.3-6.1">The signer or verifier does not understand the derived component name.<a href="#section-2.3-6.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-2.3-6.2">The component identifier identifies a field that is not present in the message or whose value is malformed.<a href="#section-2.3-6.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-2.3-6.2">The component name identifies a field that is not present in the message or whose value is malformed.<a href="#section-2.3-6.2" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-2.3-6.3">The component identifier indicates that a structured field serialization is used (via the <code>sf</code> parameter), but the field in question is known to not be a structured field or the type of structured field is not known to the implementation.<a href="#section-2.3-6.3" class="pilcrow">¶</a>
 </li>
@@ -2495,7 +2501,7 @@ Content-Length: 18
 {"hello": "world"}
 </pre><a href="#section-2.3-8" class="pilcrow">¶</a>
 </div>
-<p id="section-2.3-9">The covered components consist of the <code>@method</code>, <code>@authority</code>, and <code>@path</code> derived component identifiers followed by the <code>Content-Digest</code>, <code>Content-Length</code>, and <code>Content-Type</code> HTTP header fields, in order. The signature parameters consist of a creation timestamp of <code>1618884473</code> and a key identifier of <code>test-key-rsa-pss</code>. Note that no explicit <code>alg</code> parameter is given here since the verifier is assumed by the application to correctly use the RSA PSS algorithm based on the identified key. The signature base for this message with these parameters is:<a href="#section-2.3-9" class="pilcrow">¶</a></p>
+<p id="section-2.3-9">The covered components consist of the <code>@method</code>, <code>@authority</code>, and <code>@path</code> derived components followed by the <code>Content-Digest</code>, <code>Content-Length</code>, and <code>Content-Type</code> HTTP header fields, in order. The signature parameters consist of a creation timestamp of <code>1618884473</code> and a key identifier of <code>test-key-rsa-pss</code>. Note that no explicit <code>alg</code> parameter is given here since the verifier is assumed by the application to correctly use the RSA PSS algorithm based on the identified key. The signature base for this message with these parameters is:<a href="#section-2.3-9" class="pilcrow">¶</a></p>
 <span id="name-non-normative-example-signa"></span><div id="example-sig-input">
 <figure id="figure-1">
           <div class="alignLeft art-text artwork" id="section-2.3-10.1">
@@ -2550,7 +2556,7 @@ NOTE: '\' line wrapping per RFC 8792
 <ul class="normal">
 <li class="normal" id="section-3.1-3.4.2.1">Once an order of covered components is chosen, the order <span class="bcp14">MUST NOT</span> change for the life of the signature.<a href="#section-3.1-3.4.2.1" class="pilcrow">¶</a>
 </li>
-              <li class="normal" id="section-3.1-3.4.2.2">Each covered component identifier <span class="bcp14">MUST</span> be either an HTTP field in the message <a href="#http-header" class="xref">Section 2.1</a> or a derived component identifier listed in <a href="#derived-components" class="xref">Section 2.2</a> or its associated registry.<a href="#section-3.1-3.4.2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.1-3.4.2.2">Each covered component identifier <span class="bcp14">MUST</span> be either an HTTP field in the message <a href="#http-header" class="xref">Section 2.1</a> or a derived component listed in <a href="#derived-components" class="xref">Section 2.2</a> or its associated registry.<a href="#section-3.1-3.4.2.2" class="pilcrow">¶</a>
 </li>
               <li class="normal" id="section-3.1-3.4.2.3">Signers of a request <span class="bcp14">SHOULD</span> include some or all of the message control data in the covered components, such as the <code>@method</code>, <code>@authority</code>, <code>@target-uri</code>, or some combination thereof.<a href="#section-3.1-3.4.2.3" class="pilcrow">¶</a>
 </li>
@@ -3298,18 +3304,18 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
 <div id="content-registry">
 <section id="section-6.3">
         <h3 id="name-http-signature-derived-comp">
-<a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-http-signature-derived-comp" class="section-name selfRef">HTTP Signature Derived Component Identifiers Registry</a>
+<a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-http-signature-derived-comp" class="section-name selfRef">HTTP Signature Derived Component Names Registry</a>
         </h3>
-<p id="section-6.3-1">This document defines a method for canonicalizing HTTP message components, including components that can be derived from the context of the HTTP message outside of the HTTP fields. These components are identified by a unique string, known as the component identifier. Component identifiers for derived components always start with the "@" (at) symbol to distinguish them from HTTP header fields. IANA is asked to create and maintain a new registry titled "HTTP Signature Derived Component Identifiers" to record and maintain the set of non-field component identifiers and the methods to produce their associated component values. Initial values for this registry are given in <a href="#iana-content-contents" class="xref">Section 6.3.2</a>.  Future assignments and modifications to existing assignments are to be made through the Expert Review registration policy <span>[<a href="#RFC8126" class="xref">RFC8126</a>]</span> and shall follow the template presented in <a href="#iana-content-template" class="xref">Section 6.3.1</a>.<a href="#section-6.3-1" class="pilcrow">¶</a></p>
+<p id="section-6.3-1">This document defines a method for canonicalizing HTTP message components, including components that can be derived from the context of the HTTP message outside of the HTTP fields. These derived components are identified by a unique string, known as the component name. Component names for derived components always start with the "@" (at) symbol to distinguish them from HTTP header fields. IANA is asked to create and maintain a new registry typed "HTTP Signature Derived Component Names" to record and maintain the set of non-field component names and the methods to produce their associated component values. Initial values for this registry are given in <a href="#iana-content-contents" class="xref">Section 6.3.2</a>.  Future assignments and modifications to existing assignments are to be made through the Expert Review registration policy <span>[<a href="#RFC8126" class="xref">RFC8126</a>]</span> and shall follow the template presented in <a href="#iana-content-template" class="xref">Section 6.3.1</a>.<a href="#section-6.3-1" class="pilcrow">¶</a></p>
 <div id="iana-content-template">
 <section id="section-6.3.1">
           <h4 id="name-registration-template-3">
 <a href="#section-6.3.1" class="section-number selfRef">6.3.1. </a><a href="#name-registration-template-3" class="section-name selfRef">Registration Template</a>
           </h4>
 <span class="break"></span><dl class="dlNewline" id="section-6.3.1-1">
-            <dt id="section-6.3.1-1.1">Identifier:</dt>
+            <dt id="section-6.3.1-1.1">Name:</dt>
             <dd style="margin-left: 1.5em" id="section-6.3.1-1.2">
-              <p id="section-6.3.1-1.2.1">An identifier for the HTTP derived component identifier. The name <span class="bcp14">MUST</span> begin with the <code>"@"</code> character followed by an ASCII string consisting only of lower-case characters (<code>"a"</code> - <code>"z"</code>), digits (<code>"0"</code> - <code>"9"</code>), and hyphens (<code>"-"</code>), and <span class="bcp14">SHOULD NOT</span> exceed 20 characters in length.  The identifier <span class="bcp14">MUST</span> be unique within the context of the registry.<a href="#section-6.3.1-1.2.1" class="pilcrow">¶</a></p>
+              <p id="section-6.3.1-1.2.1">A name for the HTTP derived component. The name <span class="bcp14">MUST</span> begin with the <code>"@"</code> character followed by an ASCII string consisting only of lower-case characters (<code>"a"</code> - <code>"z"</code>), digits (<code>"0"</code> - <code>"9"</code>), and hyphens (<code>"-"</code>), and <span class="bcp14">SHOULD NOT</span> exceed 20 characters in length.  The name <span class="bcp14">MUST</span> be unique within the context of the registry.<a href="#section-6.3.1-1.2.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
 <dt id="section-6.3.1-1.3">Status:</dt>
@@ -3338,15 +3344,15 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
           <h4 id="name-initial-contents-3">
 <a href="#section-6.3.2" class="section-number selfRef">6.3.2. </a><a href="#name-initial-contents-3" class="section-name selfRef">Initial Contents</a>
           </h4>
-<p id="section-6.3.2-1">The table below contains the initial contents of the HTTP Signature Derived Component Identifiers Registry.<a href="#section-6.3.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.2-1">The table below contains the initial contents of the HTTP Signature Derived Component Names Registry.<a href="#section-6.3.2-1" class="pilcrow">¶</a></p>
 <span id="name-initial-contents-of-the-http"></span><table class="center" id="table-3">
             <caption>
 <a href="#table-3" class="selfRef">Table 3</a>:
-<a href="#name-initial-contents-of-the-http" class="selfRef">Initial contents of the HTTP Signature Derived Component Identifiers Registry.</a>
+<a href="#name-initial-contents-of-the-http" class="selfRef">Initial contents of the HTTP Signature Derived Component Names Registry.</a>
             </caption>
 <thead>
               <tr>
-                <th class="text-left" rowspan="1" colspan="1">Identifier</th>
+                <th class="text-left" rowspan="1" colspan="1">Name</th>
                 <th class="text-left" rowspan="1" colspan="1">Status</th>
                 <th class="text-left" rowspan="1" colspan="1">Target</th>
                 <th class="text-left" rowspan="1" colspan="1">Specification document(s)</th>
@@ -3608,7 +3614,7 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
 <a href="#section-7.14" class="section-number selfRef">7.14. </a><a href="#name-http-versions-and-component" class="section-name selfRef">HTTP Versions and Component Ambiguity</a>
         </h3>
 <p id="section-7.14-1">Some message components are expressed in different ways across HTTP versions. For example, the authority of the request target is sent using the <code>Host</code> header field in HTTP 1.1 but with the <code>:authority</code> pseudo-header in HTTP 2. If a signer sends an HTTP 1.1 message and signs the <code>Host</code> field, but the message is translated to HTTP 2 before it reaches the verifier, the signature will not validate as the <code>Host</code> header field could be dropped.<a href="#section-7.14-1" class="pilcrow">¶</a></p>
-<p id="section-7.14-2">It is for this reason that HTTP Message Signatures defines a set of derived components that define a single way to get value in question, such as the <code>@authority</code> derived component identifier (<a href="#content-request-authority" class="xref">Section 2.2.4</a>) in lieu of the <code>Host</code> header field. Applications should therefore prefer derived component identifiers for such options where possible.<a href="#section-7.14-2" class="pilcrow">¶</a></p>
+<p id="section-7.14-2">It is for this reason that HTTP Message Signatures defines a set of derived components that define a single way to get value in question, such as the <code>@authority</code> derived component (<a href="#content-request-authority" class="xref">Section 2.2.4</a>) in lieu of the <code>Host</code> header field. Applications should therefore prefer derived components for such options where possible.<a href="#section-7.14-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-keydowngrade">
@@ -3636,7 +3642,7 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
 <a href="#section-7.17" class="section-number selfRef">7.17. </a><a href="#name-choosing-message-components" class="section-name selfRef">Choosing Message Components</a>
         </h3>
 <p id="section-7.17-1">Applications of HTTP Message Signatures need to decide which message components will be covered by the signature. Depending on the application, some components could be expected to be changed by intermediaries prior to the signature's verification. If these components are covered, such changes would, by design, break the signature.<a href="#section-7.17-1" class="pilcrow">¶</a></p>
-<p id="section-7.17-2">However, the HTTP Message Signature standard allows for flexibility in determining which components are signed precisely so that a given application can choose the appropriate portions of the message that need to be signed, avoiding problematic components. For example, a web application framework that relies on rewriting query parameters might avoid use of the <code>@query</code> content identifier in favor of sub-indexing the query value using <code>@query-param</code> content identifier instead.<a href="#section-7.17-2" class="pilcrow">¶</a></p>
+<p id="section-7.17-2">However, the HTTP Message Signature standard allows for flexibility in determining which components are signed precisely so that a given application can choose the appropriate portions of the message that need to be signed, avoiding problematic components. For example, a web application framework that relies on rewriting query parameters might avoid use of the <code>@query</code> derived component in favor of sub-indexing the query value using <code>@query-param</code> derived components instead.<a href="#section-7.17-2" class="pilcrow">¶</a></p>
 <p id="section-7.17-3">Some components are expected to be changed by intermediaries and ought not to be signed under most circumstance. The <code>Via</code> and <code>Forwarded</code> header fields, for example, are expected to be manipulated by proxies and other middle-boxes, including replacing or entirely dropping existing values. These fields should not be covered by the signature except in very limited and tightly-coupled scenarios.<a href="#section-7.17-3" class="pilcrow">¶</a></p>
 <p id="section-7.17-4">Additional considerations for choosing signature aspects are discussed in <a href="#application" class="xref">Section 1.5</a>.<a href="#section-7.17-4" class="pilcrow">¶</a></p>
 </section>
@@ -3644,10 +3650,10 @@ Accept-Signature: sig1=("@method" "@target-uri" "@authority" \
 <div id="security-lazy-header-parser">
 <section id="section-7.18">
         <h3 id="name-confusing-http-field-names-">
-<a href="#section-7.18" class="section-number selfRef">7.18. </a><a href="#name-confusing-http-field-names-" class="section-name selfRef">Confusing HTTP Field Names for Derived Component Identifiers</a>
+<a href="#section-7.18" class="section-number selfRef">7.18. </a><a href="#name-confusing-http-field-names-" class="section-name selfRef">Confusing HTTP Field Names for Derived Component Names</a>
         </h3>
-<p id="section-7.18-1">The definition of HTTP field names does not allow for the use of the <code>@</code> character anywhere in the name. As such, since all derived component identifiers start with the <code>@</code> character, these namespaces should be completely separate. However, some HTTP implementations are not sufficiently strict about the characters accepted in HTTP headers. In such implementations, a sender (or attacker) could inject a header field starting with an <code>@</code> character and have it passed through to the application code. These invalid header fields could be used to override a portion of the derived message content and substitute an arbitrary value, providing a potential place for an attacker to mount a <span><a href="#security-collision" class="xref">signature collision</a> (<a href="#security-collision" class="xref">Section 7.5</a>)</span> attack.<a href="#section-7.18-1" class="pilcrow">¶</a></p>
-<p id="section-7.18-2">To combat this, when selecting values for a message component, if the component identifier starts with the <code>@</code> character, it needs to be processed as a derived component and never taken as a fields. Only if the component identifier does not start with the <code>@</code> character can it be taken from the fields of the message. The algorithm discussed in <a href="#create-sig-input" class="xref">Section 2.3</a> provides a safe order of operations.<a href="#section-7.18-2" class="pilcrow">¶</a></p>
+<p id="section-7.18-1">The definition of HTTP field names does not allow for the use of the <code>@</code> character anywhere in the name. As such, since all derived component names start with the <code>@</code> character, these namespaces should be completely separate. However, some HTTP implementations are not sufficiently strict about the characters accepted in HTTP headers. In such implementations, a sender (or attacker) could inject a header field starting with an <code>@</code> character and have it passed through to the application code. These invalid header fields could be used to override a portion of the derived message content and substitute an arbitrary value, providing a potential place for an attacker to mount a <span><a href="#security-collision" class="xref">signature collision</a> (<a href="#security-collision" class="xref">Section 7.5</a>)</span> attack.<a href="#section-7.18-1" class="pilcrow">¶</a></p>
+<p id="section-7.18-2">To combat this, when selecting values for a message component, if the component name starts with the <code>@</code> character, it needs to be processed as a derived component and never taken as a fields. Only if the component name does not start with the <code>@</code> character can it be taken from the fields of the message. The algorithm discussed in <a href="#create-sig-input" class="xref">Section 2.3</a> provides a safe order of operations.<a href="#section-7.18-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-nondeterministic">
