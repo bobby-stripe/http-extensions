@@ -3599,13 +3599,13 @@ Acknowledgements
    feedback, insight, and implementation of this draft and its
    predecessors (in alphabetical order): Mark Adamcin, Mark Allen, Paul
    Annesley, Karl Böhlmark, Stéphane Bortzmeyer, Sarven Capadisli, Liam
-   Dennehy, Stephen Farrell, Phillip Hallam-Baker, Eric Holmes, Andrey
-   Kislyuk, Adam Knight, Dave Lehn, Dave Longley, Ilari Liusvaara, James
-   H.  Manger, Kathleen Moriarty, Mark Nottingham, Yoav Nir, Adrian
-   Palmer, Lucas Pardue, Roberto Polli, Julian Reschke, Michael
-   Richardson, Wojciech Rygielski, Rich Salz, Adam Scarr, Cory J.  Slep,
-   Dirk Stein, Henry Story, Lukasz Szewc, Chris Webber, and Jeffrey
-   Yasskin.
+   Dennehy, Stephen Farrell, Phillip Hallam-Baker, Tyler Ham, Eric
+   Holmes, Andrey Kislyuk, Adam Knight, Dave Lehn, Dave Longley, Ilari
+   Liusvaara, James H.  Manger, Kathleen Moriarty, Mark Nottingham, Yoav
+   Nir, Adrian Palmer, Lucas Pardue, Roberto Polli, Julian Reschke,
+   Michael Richardson, Wojciech Rygielski, Rich Salz, Adam Scarr, Cory
+   J.  Slep, Dirk Stein, Henry Story, Lukasz Szewc, Chris Webber, and
+   Jeffrey Yasskin.
 
 Document History
 
