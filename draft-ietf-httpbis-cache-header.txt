@@ -5,7 +5,7 @@
 HTTP                                                       M. Nottingham
 Internet-Draft                                                    Fastly
 Intended status: Standards Track                              March 2022
-Expires: 23 September 2022
+Expires: 26 September 2022
 
 
               The Cache-Status HTTP Response Header Field
@@ -360,7 +360,10 @@ Table of Contents
    Name:  [a name for the Cache-Status parameter's key; see
       Section 3.1.2 of [STRUCTURED-FIELDS] for syntactic requirements]
 
-   Description:  [a description of the parameter semantics and value]
+   Type:  [the Structured Type of the parameter's value; see
+      Section 3.1.2 of [STRUCTURED-FIELDS]]
+
+   Description:  [a description of the parameter's semantics]
 
    Reference:  [to a specification defining this parameter, if
       available]

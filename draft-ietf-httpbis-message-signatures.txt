@@ -5,10 +5,10 @@
 HTTP                                                     A. Backman, Ed.
 Internet-Draft                                                    Amazon
 Intended status: Standards Track                               J. Richer
-Expires: 23 September 2022                           Bespoke Engineering
+Expires: 26 September 2022                           Bespoke Engineering
                                                                M. Sporny
                                                           Digital Bazaar
-                                                           22 March 2022
+                                                           25 March 2022
 
 
                         HTTP Message Signatures
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 September 2022.
+   This Internet-Draft will expire on 26 September 2022.
 
 Copyright Notice
 
@@ -1126,8 +1126,11 @@ Table of Contents
 
    And the following signature base lines:
 
+   NOTE: '\' line wrapping per RFC 8792
+
    "@query-param";name="baz": batman
-   "@query-param";name="qux":
+   "@query-param";name="qux": \
+
    "@query-param";name="param": value
 
    If a parameter name occurs multiple times in a request, all parameter
@@ -1360,6 +1363,8 @@ Table of Contents
 
    In the following non-normative example, the HTTP message being signed
    is the following request:
+
+   NOTE: '\' line wrapping per RFC 8792
 
    POST /foo?param=Value&Pet=dog HTTP/1.1
    Host: example.com
@@ -3232,6 +3237,8 @@ B.2.  Test Cases
 
    For requests, this test-request message is used:
 
+   NOTE: '\' line wrapping per RFC 8792
+
    POST /foo?param=Value&Pet=dog HTTP/1.1
    Host: example.com
    Date: Tue, 20 Apr 2021 02:07:55 GMT
@@ -3243,6 +3250,8 @@ B.2.  Test Cases
    {"hello": "world"}
 
    For responses, this test-response message is used:
+
+   NOTE: '\' line wrapping per RFC 8792
 
    HTTP/1.1 200 OK
    Date: Tue, 20 Apr 2021 02:07:56 GMT

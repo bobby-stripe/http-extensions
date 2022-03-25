@@ -5,8 +5,8 @@
 HTTP                                                         B. Campbell
 Internet-Draft                                             Ping Identity
 Intended status: Informational                            M. Bishop, Ed.
-Expires: 23 September 2022                                        Akamai
-                                                           22 March 2022
+Expires: 26 September 2022                                        Akamai
+                                                           25 March 2022
 
 
                      Client-Cert HTTP Header Field
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 September 2022.
+   This Internet-Draft will expire on 26 September 2022.
 
 Copyright Notice
 
