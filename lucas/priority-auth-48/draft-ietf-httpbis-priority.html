@@ -1043,7 +1043,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dd class="category">Standards Track</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-03-25" class="published">25 March 2022</time>
+<time datetime="2022-03-27" class="published">27 March 2022</time>
     </dd>
 <dt class="label-issn">ISSN:</dt>
 <dd class="issn">2070-1721</dd>
@@ -1348,12 +1348,13 @@ signal their view of how responses should be prioritized. Similarly, servers
 behind an intermediary can use it to signal priority to the intermediary. After
 sending a request, a client can change their view of response priority (see
 <a href="#reprioritization" class="xref">Section 6</a>) by sending HTTP-version-specific frames as defined in
-<a href="#h2-update-frame" class="xref">Section 7.1</a> and <a href="#h3-update-frame" class="xref">Section 7.2</a>.<a href="#section-1-6" class="pilcrow">¶</a></p>
+Sections <a href="#h2-update-frame" class="xref">7.1</a> and <a href="#h3-update-frame" class="xref">7.2</a>.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">Header field and frame priority signals are input to a server's response
 prioritization process. They are only a suggestion and do not guarantee any
 particular processing or transmission order for one response relative to any
-other response. <a href="#server-scheduling" class="xref">Section 10</a> and <a href="#retransmission-scheduling" class="xref">Section 12</a> provide
-considerations and guidance about how servers might act upon signals.<a href="#section-1-7" class="pilcrow">¶</a></p>
+other response. Sections <a href="#server-scheduling" class="xref">10</a> and
+<a href="#retransmission-scheduling" class="xref">12</a> provide considerations and guidance about how
+servers might act upon signals.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <div id="notational-conventions">
 <section id="section-1.1">
         <h3 id="name-notational-conventions">
@@ -1445,8 +1446,8 @@ alternative priority signals (for example, see <a href="#header-field" class="xr
 <p id="section-2.1.1-1">Before receiving a SETTINGS frame from a server, a client does not know if the server
 is ignoring HTTP/2 priority signals. Therefore, until the client receives the
 SETTINGS frame from the server, the client <span class="bcp14">SHOULD</span> send both the HTTP/2
-priority signals and the signals of this prioritization scheme (see
-<a href="#header-field" class="xref">Section 5</a> and <a href="#h2-update-frame" class="xref">Section 7.1</a>).<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
+priority signals and the signals of this prioritization scheme (see Sections
+<a href="#header-field" class="xref">5</a> and <a href="#h2-update-frame" class="xref">7.1</a>).<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
 <p id="section-2.1.1-2">Once the client receives the first SETTINGS frame that contains the
 SETTINGS_NO_RFC7540_PRIORITIES parameter with value of 1, it <span class="bcp14">SHOULD</span> stop sending
 the HTTP/2 priority signals. This avoids sending redundant signals that are
@@ -1471,7 +1472,7 @@ behind the server that the client is directly connected to.<a href="#section-2.1
 <p id="section-3-1">The priority scheme defined by this document is primarily focused on the
 prioritization of HTTP response messages (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-3.4" class="relref">Section 3.4</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>). It
 defines new priority parameters (<a href="#parameters" class="xref">Section 4</a>) and a means of conveying those
-parameters (<a href="#header-field" class="xref">Section 5</a> and <a href="#frame" class="xref">Section 7</a>), which is intended to communicate
+parameters (Sections <a href="#header-field" class="xref">5</a> and <a href="#frame" class="xref">7</a>), which is intended to communicate
 the priority of responses to a server that is responsible for prioritizing
 them. <a href="#server-scheduling" class="xref">Section 10</a> provides considerations for servers about acting on
 those signals in combination with other inputs and factors.<a href="#section-3-1" class="pilcrow">¶</a></p>
@@ -1496,8 +1497,8 @@ future extensions. Each key-value pair represents a priority parameter.<a href="
 transmit this set of priority parameters when a request or a response is issued.
 After sending a request, a client can change their view of response priority
 (<a href="#reprioritization" class="xref">Section 6</a>) by sending HTTP-version-specific PRIORITY_UPDATE frames
-defined in <a href="#h2-update-frame" class="xref">Section 7.1</a> and <a href="#h3-update-frame" class="xref">Section 7.2</a>. Frames transmit priority
-parameters on a single hop only.<a href="#section-4-2" class="pilcrow">¶</a></p>
+defined in Sections <a href="#h2-update-frame" class="xref">7.1</a> and <a href="#h3-update-frame" class="xref">7.2</a>. Frames
+transmit priority parameters on a single hop only.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <p id="section-4-3">Intermediaries can consume and produce priority signals in a PRIORITY_UPDATE
 frame or Priority header field. Sending a PRIORITY_UPDATE frame preserves the
 signal from the client carried by the Priority header field but provides a
@@ -1669,7 +1670,8 @@ indicates the endpoint's view of how HTTP responses should be prioritized.
 sent from clients and servers. Clients cannot interpret the appearance or
 omission of a Priority response header field as acknowledgement that any
 prioritization has occurred. Guidance for how endpoints can act on Priority
-header values is given in <a href="#client-scheduling" class="xref">Section 9</a> and <a href="#server-scheduling" class="xref">Section 10</a>.<a href="#section-5-1" class="pilcrow">¶</a></p>
+header values is given in Sections <a href="#client-scheduling" class="xref">9</a> and
+<a href="#server-scheduling" class="xref">10</a>.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2">Priority is a Dictionary (<span><a href="https://rfc-editor.org/rfc/rfc8941#section-3.2" class="relref">Section 3.2</a> of [<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>):<a href="#section-5-2" class="pilcrow">¶</a></p>
 <div id="section-5-3">
 <pre class="lang-abnf sourcecode">
@@ -2082,8 +2084,8 @@ fairness between connections competing for bandwidth. When HTTP requests are
 forwarded through intermediaries, progress made by each connection originating
 from end clients can become different over time, depending on how intermediaries
 coalesce or split requests into backend connections. This unfairness can expand
-if priority signals are used. <a href="#coalescing" class="xref">Section 13.1</a> and <a href="#h1-backends" class="xref">Section 13.2</a> discuss
-mitigations against this expansion of unfairness.<a href="#section-13-1" class="pilcrow">¶</a></p>
+if priority signals are used. Sections <a href="#coalescing" class="xref">13.1</a> and <a href="#h1-backends" class="xref">13.2</a>
+discuss mitigations against this expansion of unfairness.<a href="#section-13-1" class="pilcrow">¶</a></p>
 <p id="section-13-2">Conversely, <a href="#intentional-unfairness" class="xref">Section 13.3</a> discusses how servers might intentionally
 allocate unequal bandwidth to some connections, depending on the priority
 signals.<a href="#section-13-2" class="pilcrow">¶</a></p>

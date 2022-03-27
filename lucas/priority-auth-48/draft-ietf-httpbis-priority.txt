@@ -6,7 +6,7 @@ Internet Engineering Task Force (IETF)                            K. Oku
 Request for Comments: 9218                                        Fastly
 Category: Standards Track                                      L. Pardue
 ISSN: 2070-1721                                               Cloudflare
-                                                           25 March 2022
+                                                           27 March 2022
 
 
                Extensible Prioritization Scheme for HTTP
@@ -165,14 +165,13 @@ Table of Contents
    behind an intermediary can use it to signal priority to the
    intermediary.  After sending a request, a client can change their
    view of response priority (see Section 6) by sending HTTP-version-
-   specific frames as defined in Section 7.1 and Section 7.2.
+   specific frames as defined in Sections 7.1 and 7.2.
 
    Header field and frame priority signals are input to a server's
    response prioritization process.  They are only a suggestion and do
    not guarantee any particular processing or transmission order for one
-   response relative to any other response.  Section 10 and Section 12
-   provide considerations and guidance about how servers might act upon
-   signals.
+   response relative to any other response.  Sections 10 and 12 provide
+   considerations and guidance about how servers might act upon signals.
 
 1.1.  Notational Conventions
 
@@ -281,7 +280,7 @@ Table of Contents
    know if the server is ignoring HTTP/2 priority signals.  Therefore,
    until the client receives the SETTINGS frame from the server, the
    client SHOULD send both the HTTP/2 priority signals and the signals
-   of this prioritization scheme (see Section 5 and Section 7.1).
+   of this prioritization scheme (see Sections 5 and 7.1).
 
    Once the client receives the first SETTINGS frame that contains the
    SETTINGS_NO_RFC7540_PRIORITIES parameter with value of 1, it SHOULD
@@ -301,8 +300,8 @@ Table of Contents
    The priority scheme defined by this document is primarily focused on
    the prioritization of HTTP response messages (see Section 3.4 of
    [HTTP]).  It defines new priority parameters (Section 4) and a means
-   of conveying those parameters (Section 5 and Section 7), which is
-   intended to communicate the priority of responses to a server that is
+   of conveying those parameters (Sections 5 and 7), which is intended
+   to communicate the priority of responses to a server that is
    responsible for prioritizing them.  Section 10 provides
    considerations for servers about acting on those signals in
    combination with other inputs and factors.
@@ -329,8 +328,8 @@ Table of Contents
    transmit this set of priority parameters when a request or a response
    is issued.  After sending a request, a client can change their view
    of response priority (Section 6) by sending HTTP-version-specific
-   PRIORITY_UPDATE frames defined in Section 7.1 and Section 7.2.
-   Frames transmit priority parameters on a single hop only.
+   PRIORITY_UPDATE frames defined in Sections 7.1 and 7.2.  Frames
+   transmit priority parameters on a single hop only.
 
    Intermediaries can consume and produce priority signals in a
    PRIORITY_UPDATE frame or Priority header field.  Sending a
@@ -497,7 +496,7 @@ Table of Contents
    and servers.  Clients cannot interpret the appearance or omission of
    a Priority response header field as acknowledgement that any
    prioritization has occurred.  Guidance for how endpoints can act on
-   Priority header values is given in Section 9 and Section 10.
+   Priority header values is given in Sections 9 and 10.
 
    Priority is a Dictionary (Section 3.2 of [STRUCTURED-FIELDS]):
 
@@ -897,8 +896,8 @@ Table of Contents
    each connection originating from end clients can become different
    over time, depending on how intermediaries coalesce or split requests
    into backend connections.  This unfairness can expand if priority
-   signals are used.  Section 13.1 and Section 13.2 discuss mitigations
-   against this expansion of unfairness.
+   signals are used.  Sections 13.1 and 13.2 discuss mitigations against
+   this expansion of unfairness.
 
    Conversely, Section 13.3 discusses how servers might intentionally
    allocate unequal bandwidth to some connections, depending on the
