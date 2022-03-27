@@ -1449,9 +1449,9 @@ SETTINGS frame from the server, the client <span class="bcp14">SHOULD</span> sen
 priority signals and the signals of this prioritization scheme (see Sections
 <a href="#header-field" class="xref">5</a> and <a href="#h2-update-frame" class="xref">7.1</a>).<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
 <p id="section-2.1.1-2">Once the client receives the first SETTINGS frame that contains the
-SETTINGS_NO_RFC7540_PRIORITIES parameter with value of 1, it <span class="bcp14">SHOULD</span> stop sending
-the HTTP/2 priority signals. This avoids sending redundant signals that are
-known to be ignored.<a href="#section-2.1.1-2" class="pilcrow">¶</a></p>
+SETTINGS_NO_RFC7540_PRIORITIES parameter with a value of 1, it <span class="bcp14">SHOULD</span> stop
+sending the HTTP/2 priority signals. This avoids sending redundant signals that
+are known to be ignored.<a href="#section-2.1.1-2" class="pilcrow">¶</a></p>
 <p id="section-2.1.1-3">Similarly, if the client receives SETTINGS_NO_RFC7540_PRIORITIES with value of 0
 or if the settings parameter was absent, it <span class="bcp14">SHOULD</span> stop sending PRIORITY_UPDATE
 frames (<a href="#h2-update-frame" class="xref">Section 7.1</a>), since those frames are likely to be ignored.
