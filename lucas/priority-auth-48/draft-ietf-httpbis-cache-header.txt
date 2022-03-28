@@ -5,7 +5,7 @@
 HTTP                                                       M. Nottingham
 Internet-Draft                                                    Fastly
 Intended status: Standards Track                              March 2022
-Expires: 28 September 2022
+Expires: 29 September 2022
 
 
               The Cache-Status HTTP Response Header Field

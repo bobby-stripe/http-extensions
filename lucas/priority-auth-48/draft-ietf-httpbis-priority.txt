@@ -6,7 +6,7 @@ Internet Engineering Task Force (IETF)                            K. Oku
 Request for Comments: 9218                                        Fastly
 Category: Standards Track                                      L. Pardue
 ISSN: 2070-1721                                               Cloudflare
-                                                           27 March 2022
+                                                           28 March 2022
 
 
                Extensible Prioritization Scheme for HTTP
@@ -387,7 +387,7 @@ Table of Contents
 
    The lowest urgency level (7) is reserved for background tasks such as
    delivery of software updates.  This urgency level SHOULD NOT be used
-   for fetching responses that have impact on user interaction.
+   for fetching responses that have any impact on user interaction.
 
 4.2.  Incremental
 
@@ -541,9 +541,9 @@ Table of Contents
    A PRIORITY_UPDATE frame communicates a complete set of all priority
    parameters in the Priority Field Value field.  Omitting a priority
    parameter is a signal to use its default value.  Failure to parse the
-   Priority Field Value MAY be treated as a connection error.  In HTTP/2
-   the error is of type PROTOCOL_ERROR; in HTTP/3 the error is of type
-   H3_GENERAL_PROTOCOL_ERROR.
+   Priority Field Value MAY be treated as a connection error.  In
+   HTTP/2, the error is of type PROTOCOL_ERROR; in HTTP/3, the error is
+   of type H3_GENERAL_PROTOCOL_ERROR.
 
    A client MAY send a PRIORITY_UPDATE frame before the stream that it
    references is open (except for HTTP/2 push streams; see Section 7.1).
@@ -736,8 +736,8 @@ Table of Contents
 
    the intermediary might alter its understanding of the urgency from 5
    to 1, because it prefers the server-provided value over the client's.
-   The incremental value continues to be true, the value specified by
-   the client, as the server did not specify the incremental (i)
+   The incremental value continues to be true, i.e., the value specified
+   by the client, as the server did not specify the incremental (i)
    parameter.
 
 9.  Client Scheduling
@@ -938,11 +938,11 @@ Table of Contents
 
 13.2.  HTTP/1.x Back Ends
 
-   It is common for Content Delivery Network (CDN) infrastructure to
+   It is common for content delivery network (CDN) infrastructure to
    support different HTTP versions on the front end and back end.  For
    instance, the client-facing edge might support HTTP/2 and HTTP/3
    while communication to backend servers is done using HTTP/1.1.
-   Unlike with connection coalescing, the CDN will "demux" requests into
+   Unlike connection coalescing, the CDN will "demux" requests into
    discrete connections to the back end.  HTTP/1.1 and older do not
    support response multiplexing in a single connection, so there is not
    a fairness problem.  However, backend servers MAY still use client
